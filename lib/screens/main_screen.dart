@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:preset_app/components/bottom_bar.dart';
+import 'package:preset_app/components/categories_list.dart';
 import '../constants.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +18,14 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         backgroundColor: kPrimaryColor4,
       ),
-      body: null,
+      body: Material(
+        color: kPrimaryColor1,
+        child: Column(
+          children: [
+            CategoriesList(),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomBar(),
     );
   }
