@@ -23,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Column(
           children: [
             CategoriesList(),
+            Text('Popular Presets'),
           ],
         ),
       ),
