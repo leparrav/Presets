@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:preset_app/constants.dart';
+import 'package:preset_app/screens/preset_category_screen.dart';
 
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
 
-List<Widget> setCategoriesImages() {
+void navigateToCategory(context, String path) {
+  Navigator.pushNamed(context, PresetCategoryScreen.id);
+}
+
+List<Widget> setCategoriesImages(context) {
   final border = RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(60.0),
   );
-
-  List<String> presetCategoriesImages = [
-    'images/enPagePortrait.jpg',
-    'images/enPageKids.jpg',
-    'images/enPageTravel.jpg',
-  ];
-
   List<Widget> categories = [];
-  for (var imagePath in presetCategoriesImages) {
+  for (var imagePath in kPresetCategories) {
     categories.add(
       ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
-        child: Image.asset(imagePath),
+        child: GestureDetector(
+          onTap: () => {navigateToCategory(context, imagePath)},
+          child: Image.asset(imagePath),
+        ),
       ),
     );
     categories.add(
@@ -41,7 +42,7 @@ class CategoriesList extends StatelessWidget {
       child: Material(
         color: kPrimaryColor1,
         child: ListView(
-          children: setCategoriesImages(),
+          children: setCategoriesImages(context),
           scrollDirection: Axis.horizontal,
         ),
       ),

@@ -15,12 +15,10 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor1,
-      appBar: AppBar(
-        backgroundColor: kPrimaryColor4,
-      ),
+      appBar: topBar(),
       body: Material(
         color: kPrimaryColor1,
-        child: Column(
+        child: ListView(
           children: [
             CategoriesList(),
             Text('Popular Presets'),

@@ -4,3 +4,15 @@ const kPrimaryColor1 = Color(0xFFf1f1f1);
 const kPrimaryColor2 = Color(0xFFfdb827);
 const kPrimaryColor3 = Color(0xFF21209c);
 const kPrimaryColor4 = Color(0xFF23120B);
+
+List<String> kPresetCategories = [
+  'images/enPagePortrait.jpg',
+  'images/enPageKids.jpg',
+  'images/enPageTravel.jpg',
+];
+
+AppBar topBar() {
+  return AppBar(
+    backgroundColor: kPrimaryColor4,
+  );
+}
