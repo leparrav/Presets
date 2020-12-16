@@ -5,17 +5,22 @@ List<BottomNavigationBarItem> homeItems = [
   BottomNavigationBarItem(
     icon: Icon(
       Icons.home,
-      color: kPrimaryColor3,
+      color: kPrimaryColor1,
     ),
-    title: Text('Home'),
+    title: Text(
+      'Home',
+      style: TextStyle(color: kPrimaryColor1),
+    ),
   ),
   BottomNavigationBarItem(
-    icon: Icon(Icons.business),
-    title: Text('Business'),
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(Icons.favorite),
-    title: Text('Favorite'),
+    icon: Icon(
+      Icons.favorite,
+      color: kPrimaryColor1,
+    ),
+    title: Text(
+      'Favorites',
+      style: TextStyle(color: kPrimaryColor1),
+    ),
   ),
 ];
 
@@ -23,7 +28,7 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: kPrimaryColor4,
+      backgroundColor: Colors.black,
       items: homeItems,
     );
   }
