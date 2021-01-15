@@ -13,18 +13,30 @@ loadJson() async {
 
 List<PresetCard> buildPresetCards() {
   List<PresetCard> list;
-
-
-
-
+  return list;
 }
 
-class PresetCategoryScreen extends StatelessWidget {
+class PresetCategoryScreen extends StatefulWidget {
   static String id = 'PresetCategoryScreen';
   final String categorySelected;
 
-  const PresetCategoryScreen({Key key, this.categorySelected})
-      : super(key: key);
+  const PresetCategoryScreen({Key key, this.categorySelected}) : super(key: key);
+
+  @override
+  _PresetCategoryScreenState createState() => _PresetCategoryScreenState(categorySelected);
+}
+
+class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
+
+  final String categorySelected;
+
+  @override
+  initState() {
+    super.initState();
+    loadJson();
+  }
+
+  _PresetCategoryScreenState(this.categorySelected);
 
   @override
   Widget build(BuildContext context) {
