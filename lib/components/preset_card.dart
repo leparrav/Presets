@@ -39,7 +39,6 @@ class PresetCard extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: FlatButton(
-              color: Colors.white,
               child: Container(
                 margin: EdgeInsets.only(top: 10.0),
                 width: cardWidth,

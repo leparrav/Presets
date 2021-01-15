@@ -1,6 +1,23 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:preset_app/components/preset_card.dart';
 import 'package:preset_app/constants.dart';
+
+loadJson() async {
+  String data = await rootBundle.loadString('data/enPortrait.json');
+  var jsonResult = json.decode(data);
+  print(jsonResult);
+}
+
+List<PresetCard> buildPresetCards() {
+  List<PresetCard> list;
+
+
+
+
+}
 
 class PresetCategoryScreen extends StatelessWidget {
   static String id = 'PresetCategoryScreen';

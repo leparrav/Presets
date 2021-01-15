@@ -22,13 +22,6 @@ class _MainScreenState extends State<MainScreen> {
         child: ListView(
           children: [
             CategoriesList(),
-            Text('Recently used'),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
           ],
         ),
       ),
