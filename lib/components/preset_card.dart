@@ -5,7 +5,7 @@ import '../constants.dart';
 class PresetCard extends StatelessWidget {
   static const cardHeight = 390.0;
   static const cardWidth = 360.0;
-  static const imageWidth = 350.0;
+  static const imageWidth = 360.0;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +14,14 @@ class PresetCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 20.0),
       height: cardHeight,
       width: cardWidth,
-      color: Colors.black87,
+      color: Colors.black,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'Faded & green',
+              'FADED & GREEN',
               style: kPresetCardTextStyle,
             ),
           ),
@@ -33,17 +33,29 @@ class PresetCard extends StatelessWidget {
             ),
           ),
           Text(
-            'imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate',
-            style: kPresetCardTextStyle.copyWith(fontSize: 12),
+            'imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada',
+            style: kPresetCardTextStyle.copyWith(fontSize: 16),
           ),
           Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              margin: EdgeInsets.only(top: 5.0),
-              width: cardWidth / 3,
-              height: 40.0,
-              color: kPrimaryColor1,
-              child: Text('Use this filter ->'),
+            alignment: Alignment.center,
+            child: FlatButton(
+              color: Colors.white,
+              child: Container(
+                margin: EdgeInsets.only(top: 10.0),
+                width: cardWidth,
+                decoration: BoxDecoration(
+                  color: kPrimaryColor1,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                padding: EdgeInsets.all(10.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Use this preset',
+                    style: TextStyle(fontSize: 16, color: kPrimaryColor3),
+                  ),
+                ),
+              ),
             ),
           ),
         ],

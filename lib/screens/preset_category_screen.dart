@@ -16,8 +16,6 @@ class PresetCategoryScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.9), BlendMode.dstATop),
             image: AssetImage('images/$categorySelected.jpg'),
             fit: BoxFit.cover,
           ),
