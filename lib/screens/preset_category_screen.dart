@@ -6,11 +6,19 @@ import 'package:preset_app/components/preset_card.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/components/preset_info.dart';
 
-dynamic loadJson(String categorySelected) async {
+dynamic loadJson(kCategories categorySelected) async {
+  String data = '';
 
-
-
-  String data = await rootBundle.loadString('data/cards_info_portrait.json');
+  switch(categorySelected){
+    case kCategories.PORTRAIT:
+      data = await rootBundle.loadString('data/cards_info_portrait.json');
+      break;
+    case kCategories.KIDS:
+      data = await rootBundle.loadString('data/cards_info_kids.json');
+      break;
+    default:
+      data = await rootBundle.loadString('data/cards_info_kids.json');
+  }
   var jsonResult = json.decode(data);
   return jsonResult;
 }
@@ -34,7 +42,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
 
   buildPresetCards() async {
     List<PresetCard> widgetList = List<PresetCard>();
-    var data = await loadJson(categorySelected.toShortString());
+    var data = await loadJson(categorySelected);
     var dataList = data as List;
     List<PresetInfo> presetInfoList = dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
     for (PresetInfo item in presetInfoList){
