@@ -25,3 +25,17 @@ AppBar topBar() {
     backgroundColor: Colors.black,
   );
 }
+
+enum kCategories {
+  PORTRAIT,
+  KIDS,
+  TRAVEL,
+  NATURE,
+  WINTER
+}
+
+extension ParseToString on kCategories {
+  String toShortString() {
+    return this.toString().split('.').last.toLowerCase();
+  }
+}

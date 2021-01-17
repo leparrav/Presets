@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Kids artist",
+    "imageBefore": "samplePortrait.jpg",
+    "imageAfter": "samplePortrait.jpg",
+    "description": "Light up your pictures as a fashion artist designer"
+  },
+  {
+    "title": "Fashion artist2",
+    "imageBefore": "samplePortrait.jpg",
+    "imageAfter": "samplePortrait.jpg",
+    "description": "Light up your pictures as a fashion artist designer"
+  },
+  {
+    "title": "Fashion artist3",
+    "imageBefore": "samplePortrait.jpg",
+    "imageAfter": "samplePortrait.jpg",
+    "description": "Light up your pictures as a fashion artist designer"
+  },
+  {
+    "title": "Fashion artist4",
+    "imageBefore": "samplePortrait.jpg",
+    "imageAfter": "samplePortrait.jpg",
+    "description": "Light up your pictures as a fashion artist designer"
+  },
+  {
+    "title": "Fashion artist5",
+    "imageBefore": "samplePortrait.jpg",
+    "imageAfter": "samplePortrait.jpg",
+    "description": "Light up your pictures as a fashion artist designer"
+  }
+]

@@ -6,24 +6,24 @@ import 'package:preset_app/screens/preset_category_screen.dart';
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
 
-String getSelectedCategory(String imagePath) {
+kCategories getSelectedCategory(String imagePath) {
   switch (imagePath) {
     case 'images/enPagePortrait.jpg':
-      return 'portrait';
+      return kCategories.PORTRAIT;
     case 'images/enPageKids.jpg':
-      return 'kids';
+      return kCategories.KIDS;
     case 'images/enPageTravel.jpg':
-      return 'travel';
+      return kCategories.TRAVEL;
     case 'images/enPageNature.jpg':
-      return 'nature';
+      return kCategories.NATURE;
     case 'images/enPageWinter.jpg':
-      return 'winter';
+      return kCategories.WINTER;
     default:
-      return 'portrait';
+      return kCategories.PORTRAIT;
   }
 }
 
-void navigateToCategory(context, String categorySelected) {
+void navigateToCategory(context, kCategories categorySelected) {
   Navigator.push(
     context,
     MaterialPageRoute(
