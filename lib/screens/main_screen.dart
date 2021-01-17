@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:preset_app/components/bottom_bar.dart';
 import 'package:preset_app/components/categories_list.dart';
-import 'package:preset_app/components/preset_card.dart';
 import '../constants.dart';
 
 class MainScreen extends StatefulWidget {

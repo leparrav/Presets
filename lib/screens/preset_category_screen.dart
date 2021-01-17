@@ -4,17 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:preset_app/components/preset_card.dart';
 import 'package:preset_app/constants.dart';
+import 'package:preset_app/components/preset_info.dart';
 
-loadJson() async {
-  String data = await rootBundle.loadString('data/enPortrait.json');
+dynamic loadJson() async {
+  String data = await rootBundle.loadString('data/portrait.json');
   var jsonResult = json.decode(data);
-  print(jsonResult);
+  return jsonResult;
 }
 
-List<PresetCard> buildPresetCards() {
-  List<PresetCard> list;
-  return list;
-}
+
 
 class PresetCategoryScreen extends StatefulWidget {
   static String id = 'PresetCategoryScreen';
@@ -29,11 +27,26 @@ class PresetCategoryScreen extends StatefulWidget {
 class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
 
   final String categorySelected;
+  List<Widget> cards = [];
+
+  buildPresetCards() async {
+    List<PresetCard> widgetList = List<PresetCard>();
+    var data = await loadJson();
+    var dataList = data as List;
+    List<PresetInfo> presetInfoList = dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
+    for (PresetInfo item in presetInfoList){
+      PresetCard card = PresetCard(description: item.description, title: item.title,);
+      widgetList.add(card);
+    }
+    setState(() {
+      cards = widgetList;
+    });
+  }
 
   @override
   initState() {
     super.initState();
-    loadJson();
+    buildPresetCards();
   }
 
   _PresetCategoryScreenState(this.categorySelected);
@@ -51,14 +64,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
         ),
         child: ListView(
           padding: const EdgeInsets.all(20),
-          children: <Widget>[
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-            PresetCard(),
-          ],
+          children: cards
         ),
       ),
     );

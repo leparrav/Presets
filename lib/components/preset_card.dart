@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class PresetCard extends StatelessWidget {
-  static const cardHeight = 390.0;
-  static const cardWidth = 360.0;
+  static const height = 390.0;
+  static const width = 360.0;
   static const imageWidth = 360.0;
+
+  final String title;
+  final String description;
+
+  const PresetCard({Key key,@required this.title,@required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10.0),
       margin: EdgeInsets.symmetric(vertical: 20.0),
-      height: cardHeight,
-      width: cardWidth,
+      height: height,
+      width: width,
       color: Colors.black,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -21,7 +26,7 @@ class PresetCard extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              'FADED & GREEN',
+              title,
               style: kPresetCardTextStyle,
             ),
           ),
@@ -33,15 +38,16 @@ class PresetCard extends StatelessWidget {
             ),
           ),
           Text(
-            'imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada',
+            description,
             style: kPresetCardTextStyle.copyWith(fontSize: 16),
           ),
           Align(
             alignment: Alignment.center,
             child: FlatButton(
+              onPressed: (){},
               child: Container(
                 margin: EdgeInsets.only(top: 10.0),
-                width: cardWidth,
+                width: width,
                 decoration: BoxDecoration(
                   color: kPrimaryColor1,
                   borderRadius: BorderRadius.circular(20.0),
