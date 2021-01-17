@@ -4,7 +4,7 @@ import 'package:before_after/before_after.dart';
 import '../constants.dart';
 
 class PresetCard extends StatelessWidget {
-  static const height = 390.0;
+  static const height = 600.0;
   static const width = 360.0;
   static const imageWidth = 360.0;
 
@@ -31,12 +31,9 @@ class PresetCard extends StatelessWidget {
               style: kPresetCardTextStyle,
             ),
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: Image(
-              image: AssetImage('images/samplePortrait.jpg'),
-              width: imageWidth,
-            ),
+          BeforeAfter(
+            beforeImage: Image.asset('images/portrait_1_before.jpg'),
+            afterImage: Image.asset('images/portrait_1_after.jpg'),
           ),
           Text(
             description,
