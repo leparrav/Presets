@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:before_after/before_after.dart';
 
 import '../constants.dart';
 
