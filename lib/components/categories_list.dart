@@ -8,9 +8,9 @@ const kContainerHeight = 500.0;
 
 kCategories getSelectedCategory(String imagePath) {
   switch (imagePath) {
-    case 'images/enPagePortrait.jpg':
+    case 'images/categories/portrait.jpg':
       return kCategories.PORTRAIT;
-    case 'images/enPageKids.jpg':
+    case 'images/categories/kids.jpg':
       return kCategories.KIDS;
     case 'images/enPageTravel.jpg':
       return kCategories.TRAVEL;
@@ -36,6 +36,7 @@ void navigateToCategory(context, kCategories categorySelected) {
 
 List<Widget> setCategoriesImages(context) {
   List<Widget> categories = [];
+  //TODO: Change this for to use the enum instead
   for (var imagePath in kPresetCategories) {
     categories.add(
       ClipRRect(
@@ -45,13 +46,13 @@ List<Widget> setCategoriesImages(context) {
             navigateToCategory(context, getSelectedCategory(imagePath));
           },
           child: Stack(
+            alignment: AlignmentDirectional.bottomCenter,
             children: [
             Image.asset(imagePath),
             Positioned(
-                bottom: 30,
-                left: 120,
+                bottom: 20,
                 // TODO: Write here all of the possible categories
-                child: Text('PORTRAIT', style: kCategoryCardTextStyle)),
+                child: Text('KIDS', style: kCategoryCardTextStyle)),
             ]
           ),
         ),
