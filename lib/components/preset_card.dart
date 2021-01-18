@@ -4,7 +4,7 @@ import 'package:before_after/before_after.dart';
 import '../constants.dart';
 
 class PresetCard extends StatelessWidget {
-  static const height = 600.0;
+  static const height = 400.0;
   static const width = 360.0;
   static const imageWidth = 360.0;
 
@@ -16,7 +16,7 @@ class PresetCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(5.0),
       margin: EdgeInsets.symmetric(vertical: 20.0),
       height: height,
       width: width,
@@ -32,8 +32,8 @@ class PresetCard extends StatelessWidget {
             ),
           ),
           BeforeAfter(
-            beforeImage: Image.asset('images/portrait_1_before.jpg'),
-            afterImage: Image.asset('images/portrait_1_after.jpg'),
+            beforeImage: Image.asset('images/portrait/1_before.jpg'),
+            afterImage: Image.asset('images/portrait/1_after.jpg'),
           ),
           Text(
             description,

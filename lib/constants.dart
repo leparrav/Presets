@@ -12,6 +12,13 @@ const kPresetCardTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kCategoryCardTextStyle = TextStyle(
+  color: kPrimaryColor1,
+  fontSize: 24,
+  fontFamily: 'Lora',
+  fontWeight: FontWeight.bold,
+);
+
 List<String> kPresetCategories = [
   'images/categories/portrait.jpg',
   'images/categories/kids.jpg',

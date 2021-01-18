@@ -44,7 +44,16 @@ List<Widget> setCategoriesImages(context) {
           onTap: () {
             navigateToCategory(context, getSelectedCategory(imagePath));
           },
-          child: Image.asset(imagePath),
+          child: Stack(
+            children: [
+            Image.asset(imagePath),
+            Positioned(
+                bottom: 30,
+                left: 120,
+                // TODO: Write here all of the possible categories
+                child: Text('PORTRAIT', style: kCategoryCardTextStyle)),
+            ]
+          ),
         ),
       ),
     );
