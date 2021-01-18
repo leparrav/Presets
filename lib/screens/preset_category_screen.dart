@@ -8,17 +8,7 @@ import 'package:preset_app/components/preset_info.dart';
 
 dynamic loadJson(kCategories categorySelected) async {
   String data = '';
-
-  switch(categorySelected){
-    case kCategories.PORTRAIT:
-      data = await rootBundle.loadString('data/cards_info_portrait.json');
-      break;
-    case kCategories.KIDS:
-      data = await rootBundle.loadString('data/cards_info_kids.json');
-      break;
-    default:
-      data = await rootBundle.loadString('data/cards_info_kids.json');
-  }
+  data = await rootBundle.loadString('data/cards_info_${categorySelected.toShortString()}.json');
   var jsonResult = json.decode(data);
   return jsonResult;
 }

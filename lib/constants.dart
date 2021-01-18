@@ -13,11 +13,11 @@ const kPresetCardTextStyle = TextStyle(
 );
 
 List<String> kPresetCategories = [
-  'images/enPagePortrait.jpg',
-  'images/enPageKids.jpg',
-  'images/enPageTravel.jpg',
-  'images/enPageNature.jpg',
-  'images/enPageWinter.jpg',
+  'images/categories/portrait.jpg',
+  'images/categories/kids.jpg',
+  'images/categories/travel.jpg',
+  'images/categories/nature.jpg',
+  'images/categories/winter.jpg',
 ];
 
 AppBar topBar() {
