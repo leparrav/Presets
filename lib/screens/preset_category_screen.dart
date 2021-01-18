@@ -59,7 +59,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/${categorySelected.toShortString()}.jpg'),
+            image: AssetImage('images/categories/${categorySelected.toShortString()}.jpg'),
             fit: BoxFit.cover,
           ),
         ),
