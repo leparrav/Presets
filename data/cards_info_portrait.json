@@ -1,8 +1,8 @@
 [
   {
     "title": "Fashion artist",
-    "imageBefore": "images/portrait_1_before.jpg",
-    "imageAfter": "images/portrait_1_after.jpg",
+    "imageBefore": "images/portrait/1_before.jpg",
+    "imageAfter": "images/portrait/1_after.jpg",
     "description": "Light up your pictures as a fashion artist designer"
   },
   {

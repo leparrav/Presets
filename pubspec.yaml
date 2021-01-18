@@ -17,4 +17,5 @@ flutter:
   assets:
     - images/
     - images/categories/
+    - images/portrait/
     - data/
