@@ -8,7 +8,7 @@ import 'package:preset_app/components/preset_info.dart';
 
 dynamic loadJson(kCategories categorySelected) async {
   String data = '';
-  data = await rootBundle.loadString('data/cards_info_${categorySelected.toShortString()}.json');
+  data = await rootBundle.loadString('assets/data/cards_info_${categorySelected.toShortString()}.json');
   var jsonResult = json.decode(data);
   return jsonResult;
 }
@@ -59,7 +59,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/categories/${categorySelected.toShortString()}.jpg'),
+            image: AssetImage('assets/images/categories/${categorySelected.toShortString()}.jpg'),
             fit: BoxFit.cover,
           ),
         ),

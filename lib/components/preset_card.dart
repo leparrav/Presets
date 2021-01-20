@@ -32,8 +32,8 @@ class PresetCard extends StatelessWidget {
             ),
           ),
           BeforeAfter(
-            beforeImage: Image.asset('images/portrait/1_before.jpg'),
-            afterImage: Image.asset('images/portrait/1_after.jpg'),
+            beforeImage: Image.asset('assets/images/portrait/1_before.jpg'),
+            afterImage: Image.asset('assets/images/portrait/1_after.jpg'),
           ),
           Text(
             description,

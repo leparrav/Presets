@@ -33,7 +33,9 @@ List<Widget> setCategoriesImages(context) {
                 Image.asset('assets/images/categories/${value.toShortString()}.jpg'),
                 Positioned(
                     bottom: 20,
-                    child: Text(value.toShortString(), style: kCategoryCardTextStyle)),
+                    child: value == kCategories.WINTER ? Text(value.toShortString().toUpperCase(), style: kCategoryCardTextStyle.copyWith(color: Colors.black))
+                        : Text(value.toShortString().toUpperCase(), style: kCategoryCardTextStyle)
+                ),
               ]
           ),
         ),
