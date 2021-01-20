@@ -19,14 +19,6 @@ const kCategoryCardTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-List<String> kPresetCategories = [
-  'images/categories/portrait.jpg',
-  'images/categories/kids.jpg',
-  'images/categories/travel.jpg',
-  'images/categories/nature.jpg',
-  'images/categories/winter.jpg',
-];
-
 AppBar topBar() {
   return AppBar(
     backgroundColor: Colors.black,
