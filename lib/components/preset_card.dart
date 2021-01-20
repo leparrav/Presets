@@ -4,8 +4,8 @@ import 'package:before_after/before_after.dart';
 import '../constants.dart';
 
 class PresetCard extends StatelessWidget {
-  static const height = 400.0;
-  static const width = 360.0;
+  static const height = 600.0;
+  static const width = 500.0;
   static const imageWidth = 360.0;
 
   final String title;
@@ -42,7 +42,9 @@ class PresetCard extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: FlatButton(
-              onPressed: (){},
+              onPressed: (){
+
+              },
               child: Container(
                 margin: EdgeInsets.only(top: 10.0),
                 width: width,

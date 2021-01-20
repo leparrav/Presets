@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:preset_app/screens/main_screen.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
+import 'package:preset_app/screens/use_preset_screen.dart';
 
 void main() {
   runApp(PresetApp());
@@ -15,6 +16,7 @@ class PresetApp extends StatelessWidget {
       routes: {
         MainScreen.id: (context) => MainScreen(),
         PresetCategoryScreen.id: (context) => PresetCategoryScreen(),
+        UsePresetScreen.id: (context) => UsePresetScreen(),
       },
       home: MainScreen(),
     );
