@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:preset_app/components/preset_card.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/components/preset_info.dart';
+import 'package:preset_app/screens/use_preset_screen.dart';
 
 dynamic loadJson(kCategories categorySelected) async {
   String data = '';
@@ -42,6 +43,17 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
         title: item.title,
         colorAfter: Colors.lightGreenAccent.shade100,
         blendModeAfter: BlendMode.hue,
+        onPress: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return UsePresetScreen(
+                afterColor: Colors.blueAccent.shade50,
+                afterBlendMode: BlendMode.hue,
+              );
+            }),
+          );
+        },
       );
       widgetList.add(card);
     }

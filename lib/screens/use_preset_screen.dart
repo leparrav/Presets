@@ -1,6 +1,4 @@
-import 'package:before_after/before_after.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/primary_button.dart';
 
@@ -11,7 +9,8 @@ class UsePresetScreen extends StatefulWidget {
   final Color afterColor;
   final BlendMode afterBlendMode;
 
-  const UsePresetScreen({Key key, this.afterColor, this.afterBlendMode})
+  const UsePresetScreen(
+      {Key key, @required this.afterColor, @required this.afterBlendMode})
       : super(key: key);
 
   @override

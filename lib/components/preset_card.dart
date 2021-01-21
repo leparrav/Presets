@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:before_after/before_after.dart';
 import 'package:preset_app/components/primary_button.dart';
-import 'package:preset_app/screens/use_preset_screen.dart';
 
 import '../constants.dart';
 import 'before_after_stack.dart';
@@ -15,13 +13,15 @@ class PresetCard extends StatelessWidget {
   final String description;
   final Color colorAfter;
   final BlendMode blendModeAfter;
+  final Function onPress;
 
   const PresetCard(
       {Key key,
       @required this.title,
       @required this.description,
       @required this.colorAfter,
-      @required this.blendModeAfter})
+      @required this.blendModeAfter,
+      @required this.onPress})
       : super(key: key);
 
   @override
@@ -56,9 +56,7 @@ class PresetCard extends StatelessWidget {
             alignment: Alignment.center,
             child: PrimaryButton(
               width: width,
-              onPressed: () {
-                Navigator.pushNamed(context, UsePresetScreen.id);
-              },
+              onPressed: onPress,
             ),
           ),
         ],
