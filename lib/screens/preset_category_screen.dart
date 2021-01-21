@@ -8,25 +8,25 @@ import 'package:preset_app/components/preset_info.dart';
 
 dynamic loadJson(kCategories categorySelected) async {
   String data = '';
-  data = await rootBundle.loadString('assets/data/cards_info_${categorySelected.toShortString()}.json');
+  data = await rootBundle.loadString(
+      'assets/data/cards_info_${categorySelected.toShortString()}.json');
   var jsonResult = json.decode(data);
   return jsonResult;
 }
-
-
 
 class PresetCategoryScreen extends StatefulWidget {
   static String id = 'PresetCategoryScreen';
   final kCategories categorySelected;
 
-  const PresetCategoryScreen({Key key, this.categorySelected}) : super(key: key);
+  const PresetCategoryScreen({Key key, this.categorySelected})
+      : super(key: key);
 
   @override
-  _PresetCategoryScreenState createState() => _PresetCategoryScreenState(categorySelected);
+  _PresetCategoryScreenState createState() =>
+      _PresetCategoryScreenState(categorySelected);
 }
 
 class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
-
   final kCategories categorySelected;
   List<Widget> cards = [];
 
@@ -34,9 +34,15 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
     List<PresetCard> widgetList = List<PresetCard>();
     var data = await loadJson(categorySelected);
     var dataList = data as List;
-    List<PresetInfo> presetInfoList = dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
-    for (PresetInfo item in presetInfoList){
-      PresetCard card = PresetCard(description: item.description, title: item.title,);
+    List<PresetInfo> presetInfoList =
+        dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
+    for (PresetInfo item in presetInfoList) {
+      PresetCard card = PresetCard(
+        description: item.description,
+        title: item.title,
+        colorAfter: Colors.lightGreenAccent.shade100,
+        blendModeAfter: BlendMode.hue,
+      );
       widgetList.add(card);
     }
     setState(() {
@@ -59,14 +65,12 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/categories/${categorySelected.toShortString()}.jpg'),
+            image: AssetImage(
+                'assets/images/categories/${categorySelected.toShortString()}.jpg'),
             fit: BoxFit.cover,
           ),
         ),
-        child: ListView(
-          padding: const EdgeInsets.all(20),
-          children: cards
-        ),
+        child: ListView(padding: const EdgeInsets.all(20), children: cards),
       ),
     );
   }

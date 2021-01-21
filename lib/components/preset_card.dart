@@ -13,8 +13,15 @@ class PresetCard extends StatelessWidget {
 
   final String title;
   final String description;
+  final Color colorAfter;
+  final BlendMode blendModeAfter;
 
-  const PresetCard({Key key, @required this.title, @required this.description})
+  const PresetCard(
+      {Key key,
+      @required this.title,
+      @required this.description,
+      @required this.colorAfter,
+      @required this.blendModeAfter})
       : super(key: key);
 
   @override
@@ -24,7 +31,7 @@ class PresetCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 20.0),
       height: height,
       width: width,
-      color: Colors.black,
+      color: Colors.black87,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -37,6 +44,8 @@ class PresetCard extends StatelessWidget {
           ),
           BeforeAfterStack(
             imageHeight: 400,
+            afterFilterColor: colorAfter,
+            afterBlendMode: blendModeAfter,
           ),
           Text(
             description,

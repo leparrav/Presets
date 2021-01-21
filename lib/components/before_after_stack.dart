@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 
 class BeforeAfterStack extends StatefulWidget {
   final double imageHeight;
+  final Color afterFilterColor;
+  final BlendMode afterBlendMode;
 
-  const BeforeAfterStack({Key key, @required this.imageHeight})
+  const BeforeAfterStack(
+      {Key key,
+      @required this.imageHeight,
+      @required this.afterFilterColor,
+      @required this.afterBlendMode})
       : super(key: key);
 
   @override
@@ -14,6 +20,10 @@ class BeforeAfterStack extends StatefulWidget {
 class _BeforeAfterStackState extends State<BeforeAfterStack> {
   final double imageHeight;
 
+  ColorFilter getColorFilter(Color color, BlendMode blendMode) {
+    return ColorFilter.mode(color, blendMode);
+  }
+
   _BeforeAfterStackState(this.imageHeight);
 
   @override
@@ -21,7 +31,13 @@ class _BeforeAfterStackState extends State<BeforeAfterStack> {
     return Stack(children: [
       BeforeAfter(
         beforeImage: Image.asset('assets/images/portrait/1_after.jpg'),
-        afterImage: Image.asset('assets/images/portrait/1_after.jpg'),
+        afterImage: ColorFiltered(
+          colorFilter:
+              getColorFilter(widget.afterFilterColor, widget.afterBlendMode),
+          child: Image(
+            image: AssetImage('assets/images/portrait/1_after.jpg'),
+          ),
+        ),
         imageHeight: imageHeight,
       ),
       Positioned(
