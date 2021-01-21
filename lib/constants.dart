@@ -6,7 +6,7 @@ const kPrimaryColor3 = Color(0xFF21209c);
 const kPrimaryColor4 = Color(0xFF23120B);
 
 const kPresetCardTextStyle = TextStyle(
-  color: kPrimaryColor2,
+  color: kPrimaryColor1,
   fontSize: 24,
   fontFamily: 'Lora',
   fontWeight: FontWeight.bold,
@@ -25,13 +25,7 @@ AppBar topBar() {
   );
 }
 
-enum kCategories {
-  PORTRAIT,
-  KIDS,
-  TRAVEL,
-  NATURE,
-  WINTER
-}
+enum kCategories { PORTRAIT, KIDS, TRAVEL, NATURE, WINTER }
 
 extension ParseToString on kCategories {
   String toShortString() {

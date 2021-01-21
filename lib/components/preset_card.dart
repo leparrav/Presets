@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:before_after/before_after.dart';
+import 'package:preset_app/components/primary_button.dart';
+import 'package:preset_app/screens/use_preset_screen.dart';
 
 import '../constants.dart';
+import 'before_after_stack.dart';
 
 class PresetCard extends StatelessWidget {
   static const height = 600.0;
@@ -11,7 +14,8 @@ class PresetCard extends StatelessWidget {
   final String title;
   final String description;
 
-  const PresetCard({Key key,@required this.title,@required this.description}) : super(key: key);
+  const PresetCard({Key key, @required this.title, @required this.description})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,36 +35,21 @@ class PresetCard extends StatelessWidget {
               style: kPresetCardTextStyle,
             ),
           ),
-          BeforeAfter(
-            beforeImage: Image.asset('assets/images/portrait/1_before.jpg'),
-            afterImage: Image.asset('assets/images/portrait/1_after.jpg'),
+          BeforeAfterStack(
+            imageHeight: 400,
           ),
           Text(
             description,
-            style: kPresetCardTextStyle.copyWith(fontSize: 16),
+            style: kPresetCardTextStyle.copyWith(
+                fontSize: 16, color: kPrimaryColor2),
           ),
           Align(
             alignment: Alignment.center,
-            child: FlatButton(
-              onPressed: (){
-
+            child: PrimaryButton(
+              width: width,
+              onPressed: () {
+                Navigator.pushNamed(context, UsePresetScreen.id);
               },
-              child: Container(
-                margin: EdgeInsets.only(top: 10.0),
-                width: width,
-                decoration: BoxDecoration(
-                  color: kPrimaryColor1,
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                padding: EdgeInsets.all(10.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Use this preset',
-                    style: TextStyle(fontSize: 16, color: kPrimaryColor3),
-                  ),
-                ),
-              ),
             ),
           ),
         ],
