@@ -23,17 +23,15 @@ class PresetCategoryScreen extends StatefulWidget {
       : super(key: key);
 
   @override
-  _PresetCategoryScreenState createState() =>
-      _PresetCategoryScreenState(categorySelected);
+  _PresetCategoryScreenState createState() => _PresetCategoryScreenState();
 }
 
 class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
-  final kCategories categorySelected;
   List<Widget> cards = [];
 
   buildPresetCards() async {
     List<PresetCard> widgetList = List<PresetCard>();
-    var data = await loadJson(categorySelected);
+    var data = await loadJson(widget.categorySelected);
     var dataList = data as List;
     List<PresetInfo> presetInfoList =
         dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
@@ -48,7 +46,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
             context,
             MaterialPageRoute(builder: (context) {
               return UsePresetScreen(
-                afterColor: Colors.blueAccent.shade50,
+                afterColor: Colors.blue.shade100,
                 afterBlendMode: BlendMode.hue,
               );
             }),
@@ -68,7 +66,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
     buildPresetCards();
   }
 
-  _PresetCategoryScreenState(this.categorySelected);
+  _PresetCategoryScreenState();
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +76,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-                'assets/images/categories/${categorySelected.toShortString()}.jpg'),
+                'assets/images/categories/${widget.categorySelected.toShortString()}.jpg'),
             fit: BoxFit.cover,
           ),
         ),

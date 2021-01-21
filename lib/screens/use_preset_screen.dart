@@ -22,6 +22,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    print(widget.afterColor);
+    print(widget.afterBlendMode);
   }
 
   @override
