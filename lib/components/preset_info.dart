@@ -3,13 +3,15 @@ class PresetInfo {
   String imageBefore;
   String imageAfter;
   String description;
+  String color;
+  String blendMode;
 
-  PresetInfo(
-      { this.title,
-        this.description,
-        this.imageBefore,
-        this.imageAfter,});
-
+  PresetInfo({
+    this.title,
+    this.description,
+    this.imageBefore,
+    this.imageAfter,
+  });
 
   factory PresetInfo.fromJson(Map<String, dynamic> json) {
     return PresetInfo(
@@ -18,5 +20,4 @@ class PresetInfo {
         imageBefore: json["imageBefore"],
         imageAfter: json["imageAfter"]);
   }
-
 }

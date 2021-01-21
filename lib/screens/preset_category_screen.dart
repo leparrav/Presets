@@ -46,7 +46,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
             context,
             MaterialPageRoute(builder: (context) {
               return UsePresetScreen(
-                afterColor: Colors.blue.shade100,
+                afterColor: Colors.black12,
                 afterBlendMode: BlendMode.hue,
               );
             }),

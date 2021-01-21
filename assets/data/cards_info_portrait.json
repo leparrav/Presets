@@ -3,30 +3,40 @@
     "title": "Fashion artist",
     "imageBefore": "images/portrait/1_before.jpg",
     "imageAfter": "images/portrait/1_after.jpg",
-    "description": "Light up your pictures as a fashion artist designer"
+    "description": "Light up your pictures as a fashion artist designer",
+    "color": "0xFF314522",
+    "blendMode": "hue"
   },
   {
     "title": "Fashion artist2",
     "imageBefore": "samplePortrait.jpg",
     "imageAfter": "samplePortrait.jpg",
-    "description": "Light up your pictures as a fashion artist designer"
+    "description": "Light up your pictures as a fashion artist designer",
+    "color": "0xFF3FF522",
+    "blendMode": "hue"
   },
   {
     "title": "Fashion artist3",
     "imageBefore": "samplePortrait.jpg",
     "imageAfter": "samplePortrait.jpg",
-    "description": "Light up your pictures as a fashion artist designer"
+    "description": "Light up your pictures as a fashion artist designer",
+    "color": "0xFF3FF542",
+    "blendMode": "hue"
   },
   {
     "title": "Fashion artist4",
     "imageBefore": "samplePortrait.jpg",
     "imageAfter": "samplePortrait.jpg",
-    "description": "Light up your pictures as a fashion artist designer"
+    "description": "Light up your pictures as a fashion artist designer",
+    "color": "0xFFFG4522",
+    "blendMode": "hue"
   },
   {
     "title": "Fashion artist5",
     "imageBefore": "samplePortrait.jpg",
     "imageAfter": "samplePortrait.jpg",
-    "description": "Light up your pictures as a fashion artist designer"
+    "description": "Light up your pictures as a fashion artist designer",
+    "color": "0xFF314500",
+    "blendMode": "hue"
   }
 ]
