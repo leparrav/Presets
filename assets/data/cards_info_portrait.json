@@ -11,6 +11,6 @@
     "imageBefore": "samplePortrait.jpg",
     "imageAfter": "samplePortrait.jpg",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.393, 0.769, 0.189, 0, 0, 0.349, 0.686, 0.168, 0, 0, 0.272, 0.534, 0.131, 0, 0,  0, 0, 0, 1, 0"
+    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
   }
 ]
