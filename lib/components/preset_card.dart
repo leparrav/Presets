@@ -11,16 +11,14 @@ class PresetCard extends StatelessWidget {
 
   final String title;
   final String description;
-  final Color colorAfter;
-  final BlendMode blendModeAfter;
+  final List<double> colorMatrix;
   final Function onPress;
 
   const PresetCard(
       {Key key,
       @required this.title,
       @required this.description,
-      @required this.colorAfter,
-      @required this.blendModeAfter,
+      @required this.colorMatrix,
       @required this.onPress})
       : super(key: key);
 
@@ -44,8 +42,7 @@ class PresetCard extends StatelessWidget {
           ),
           BeforeAfterStack(
             imageHeight: 400,
-            afterFilterColor: colorAfter,
-            afterBlendMode: blendModeAfter,
+            colorMatrix: colorMatrix,
           ),
           Text(
             description,

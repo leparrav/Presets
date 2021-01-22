@@ -33,21 +33,21 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
     List<PresetCard> widgetList = List<PresetCard>();
     var data = await loadJson(widget.categorySelected);
     var dataList = data as List;
+
     List<PresetInfo> presetInfoList =
         dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
+
     for (PresetInfo item in presetInfoList) {
       PresetCard card = PresetCard(
         description: item.description,
         title: item.title,
-        colorAfter: Colors.lightGreenAccent.shade100,
-        blendModeAfter: BlendMode.hue,
+        colorMatrix: item.colorMatrix,
         onPress: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
               return UsePresetScreen(
-                afterColor: Colors.black12,
-                afterBlendMode: BlendMode.hue,
+                colorMatrix: item.colorMatrix,
               );
             }),
           );

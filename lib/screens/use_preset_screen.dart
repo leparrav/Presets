@@ -6,11 +6,9 @@ import '../constants.dart';
 
 class UsePresetScreen extends StatefulWidget {
   static String id = 'UsePresetScreen';
-  final Color afterColor;
-  final BlendMode afterBlendMode;
+  final List<double> colorMatrix;
 
-  const UsePresetScreen(
-      {Key key, @required this.afterColor, @required this.afterBlendMode})
+  const UsePresetScreen({Key key, @required this.colorMatrix})
       : super(key: key);
 
   @override
@@ -18,14 +16,6 @@ class UsePresetScreen extends StatefulWidget {
 }
 
 class _UsePresetScreenState extends State<UsePresetScreen> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print(widget.afterColor);
-    print(widget.afterBlendMode);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +25,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           children: [
             BeforeAfterStack(
               imageHeight: 500,
-              afterFilterColor: widget.afterColor,
-              afterBlendMode: widget.afterBlendMode,
+              colorMatrix: widget.colorMatrix,
             ),
             SizedBox(height: 20.0),
             Slider(
