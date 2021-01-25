@@ -24,11 +24,11 @@ class _BeforeAfterStackState extends State<BeforeAfterStack> {
   Widget build(BuildContext context) {
     return Stack(children: [
       BeforeAfter(
-        beforeImage: Image.asset('assets/images/portrait/1_after.jpg'),
+        beforeImage: Image.asset('assets/images/portrait/sample_1.jpg'),
         afterImage: ColorFiltered(
           colorFilter: ColorFilter.matrix(widget.colorMatrix),
           child: Image(
-            image: AssetImage('assets/images/portrait/1_after.jpg'),
+            image: AssetImage('assets/images/portrait/sample_1.jpg'),
           ),
         ),
         imageHeight: imageHeight,
