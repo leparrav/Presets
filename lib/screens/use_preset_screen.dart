@@ -48,7 +48,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
         child: ColorFiltered(
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
-            height: 100,
+            width: 50,
+            height: 50,
             image: AssetImage(
                 'assets/images/${selected.toShortString()}/${item.sampleImage}'),
           ),
@@ -74,11 +75,6 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
 
       listOfPortraits.add(
         column,
-      );
-      listOfPortraits.add(
-        SizedBox(
-          width: 20.0,
-        ),
       );
     }
 
@@ -107,7 +103,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
             ),
             SizedBox(height: 30.0),
             Container(
-              height: 120.0,
+              height: 70.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: portraitImages,
