@@ -5,8 +5,11 @@ import '../constants.dart';
 class PrimaryButton extends StatelessWidget {
   final double width;
   final Function onPressed;
+  final String label;
 
-  const PrimaryButton({Key key, this.width, this.onPressed}) : super(key: key);
+  const PrimaryButton(
+      {Key key, this.width, this.onPressed, this.label = 'Use this preset'})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class PrimaryButton extends StatelessWidget {
         child: Align(
           alignment: Alignment.center,
           child: Text(
-            'Use this preset',
+            label,
             style: TextStyle(fontSize: 16, color: kPrimaryColor3),
           ),
         ),

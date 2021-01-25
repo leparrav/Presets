@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
+import 'package:preset_app/screens/use_preset_screen.dart';
 
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
@@ -19,25 +19,35 @@ void navigateToCategory(context, kCategories categorySelected) {
 
 List<Widget> setCategoriesImages(context) {
   List<Widget> categories = [];
+
   for (var value in kCategories.values) {
     categories.add(
       ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
         child: GestureDetector(
           onTap: () {
-            navigateToCategory(context, value);
-          },
-          child: Stack(
-              alignment: AlignmentDirectional.bottomCenter,
-              children: [
-                Image.asset('assets/images/categories/${value.toShortString()}.jpg'),
-                Positioned(
-                    bottom: 20,
-                    child: value == kCategories.WINTER ? Text(value.toShortString().toUpperCase(), style: kCategoryCardTextStyle.copyWith(color: Colors.black))
-                        : Text(value.toShortString().toUpperCase(), style: kCategoryCardTextStyle)
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UsePresetScreen(
+                  colorMatrix: kIdentityColorMatrix,
+                  categorySelected: value,
                 ),
-              ]
-          ),
+              ),
+            );
+          },
+          child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
+            Image.asset(
+                'assets/images/categories/${value.toShortString()}.jpg'),
+            Positioned(
+                bottom: 20,
+                child: value == kCategories.WINTER
+                    ? Text(value.toShortString().toUpperCase(),
+                        style: kCategoryCardTextStyle.copyWith(
+                            color: Colors.black))
+                    : Text(value.toShortString().toUpperCase(),
+                        style: kCategoryCardTextStyle)),
+          ]),
         ),
       ),
     );

@@ -32,3 +32,26 @@ extension ParseToString on kCategories {
     return this.toString().split('.').last.toLowerCase();
   }
 }
+
+const List<double> kIdentityColorMatrix = [
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1,
+  0,
+];

@@ -11,8 +11,10 @@ import '../constants.dart';
 class UsePresetScreen extends StatefulWidget {
   static String id = 'UsePresetScreen';
   final List<double> colorMatrix;
+  final kCategories categorySelected;
 
-  const UsePresetScreen({Key key, @required this.colorMatrix})
+  const UsePresetScreen(
+      {Key key, @required this.colorMatrix, this.categorySelected})
       : super(key: key);
 
   @override
@@ -29,11 +31,9 @@ dynamic loadJson(kCategories categorySelected) async {
 
 class _UsePresetScreenState extends State<UsePresetScreen> {
   List<Widget> portraitImages = [];
+  List<double> appliedFilter = [];
 
-  void buildPresetFiltersPortraits() async {
-    // TODO: Pass the right category
-    kCategories selected = kCategories.PORTRAIT;
-
+  void buildPresetFiltersPortraits(kCategories selected) async {
     List<Widget> listOfPortraits = [];
 
     var data = await loadJson(selected);
@@ -44,17 +44,37 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
 
     for (PresetInfo item in presetInfoList) {
       ClipRRect portrait = ClipRRect(
-        borderRadius: BorderRadius.circular(200.0),
+        borderRadius: BorderRadius.circular(300.0),
         child: ColorFiltered(
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
+            height: 100,
             image: AssetImage(
                 'assets/images/${selected.toShortString()}/${item.sampleImage}'),
           ),
         ),
       );
 
-      listOfPortraits.add(portrait);
+      Column column = Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            item.title,
+            style: kPresetCardTextStyle.copyWith(fontSize: 10.0),
+          ),
+          FlatButton(
+              onPressed: () {
+                setState(() {
+                  appliedFilter = item.colorMatrix;
+                });
+              },
+              child: portrait)
+        ],
+      );
+
+      listOfPortraits.add(
+        column,
+      );
       listOfPortraits.add(
         SizedBox(
           width: 20.0,
@@ -70,7 +90,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   @override
   void initState() {
     super.initState();
-    buildPresetFiltersPortraits();
+    appliedFilter = widget.colorMatrix;
+    buildPresetFiltersPortraits(widget.categorySelected);
   }
 
   @override
@@ -82,18 +103,24 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           children: [
             BeforeAfterStack(
               imageHeight: 500,
-              colorMatrix: widget.colorMatrix,
+              colorMatrix: appliedFilter,
             ),
             SizedBox(height: 30.0),
             Container(
-              height: 70.0,
+              height: 120.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: portraitImages,
               ),
             ),
             SizedBox(height: 20.0),
-            PrimaryButton(width: 300)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                PrimaryButton(label: 'See all', width: 120),
+                PrimaryButton(width: 160),
+              ],
+            )
           ],
         ),
       ),
