@@ -15,7 +15,7 @@
     "title": "Fashion artist2",
     "sampleImage": "sample_3.jpg",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.39, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0.71, 0, 0, 0, 0, 0, 1, 0"
   },
   {
     "title": "Fashion artist2",
