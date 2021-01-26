@@ -1,14 +1,18 @@
+import 'dart:io';
+
 import 'package:before_after/before_after.dart';
 import 'package:flutter/material.dart';
 
 class BeforeAfterStack extends StatefulWidget {
   final double imageHeight;
   final List<double> colorMatrix;
+  final File imageSelected;
 
   const BeforeAfterStack({
     Key key,
     @required this.imageHeight,
     @required this.colorMatrix,
+    this.imageSelected,
   }) : super(key: key);
 
   @override
@@ -24,12 +28,10 @@ class _BeforeAfterStackState extends State<BeforeAfterStack> {
   Widget build(BuildContext context) {
     return Stack(children: [
       BeforeAfter(
-        beforeImage: Image.asset('assets/images/portrait/sample_1.jpg'),
+        beforeImage: Image.file(widget.imageSelected),
         afterImage: ColorFiltered(
           colorFilter: ColorFilter.matrix(widget.colorMatrix),
-          child: Image(
-            image: AssetImage('assets/images/portrait/sample_1.jpg'),
-          ),
+          child: Image.file(widget.imageSelected),
         ),
         imageHeight: imageHeight,
       ),

@@ -1,7 +1,8 @@
+import 'dart:io';
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/preset_info.dart';
 import 'package:preset_app/components/primary_button.dart';
@@ -32,6 +33,23 @@ dynamic loadJson(kCategories categorySelected) async {
 class _UsePresetScreenState extends State<UsePresetScreen> {
   List<Widget> portraitImages = [];
   List<double> appliedFilter = [];
+  final picker = ImagePicker();
+  File _image;
+  dynamic _pickImageError;
+  bool imageSelected = false;
+
+  Future getImage(ImageSource source) async {
+    final pickedFile = await picker.getImage(source: source);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+        imageSelected = true;
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   void buildPresetFiltersPortraits(kCategories selected) async {
     List<Widget> listOfPortraits = [];
@@ -44,12 +62,10 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
 
     for (PresetInfo item in presetInfoList) {
       ClipRRect portrait = ClipRRect(
-        borderRadius: BorderRadius.circular(300.0),
         child: ColorFiltered(
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
-            width: 50,
-            height: 50,
+            height: 100,
             image: AssetImage(
                 'assets/images/${selected.toShortString()}/${item.sampleImage}'),
           ),
@@ -95,30 +111,49 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     return Scaffold(
       backgroundColor: Colors.black87,
       body: SafeArea(
-        child: Column(
-          children: [
-            BeforeAfterStack(
-              imageHeight: 500,
-              colorMatrix: appliedFilter,
-            ),
-            SizedBox(height: 30.0),
-            Container(
-              height: 70.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: portraitImages,
+        child: !imageSelected
+            ? SimpleDialog(children: <Widget>[
+                SimpleDialogOption(
+                  onPressed: () {
+                    getImage(ImageSource.camera);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text('Camera'),
+                      Icon(Icons.camera_alt_outlined),
+                    ],
+                  ),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {
+                    getImage(ImageSource.gallery);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text('Gallery'),
+                      Icon(Icons.add_photo_alternate_outlined),
+                    ],
+                  ),
+                )
+              ])
+            : Column(
+                children: [
+                  BeforeAfterStack(
+                      imageHeight: 500,
+                      colorMatrix: appliedFilter,
+                      imageSelected: _image),
+                  SizedBox(height: 20.0),
+                  Container(
+                    height: 120.0,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: portraitImages,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 20.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PrimaryButton(label: 'See all', width: 120),
-                PrimaryButton(width: 160),
-              ],
-            )
-          ],
-        ),
       ),
     );
   }
