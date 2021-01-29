@@ -11,6 +11,8 @@ dependencies:
   before_after: ^2.1.0
   image_picker: ^0.6.7+21
   share: ^0.6.5+4
+  screenshot: ^0.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
