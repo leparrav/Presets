@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/preset_info.dart';
-import 'package:preset_app/components/primary_button.dart';
 import 'package:preset_app/screens/confirm_screen.dart';
 
 import '../constants.dart';
@@ -36,7 +35,6 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   List<double> appliedFilter = [];
   final picker = ImagePicker();
   File _image;
-  dynamic _pickImageError;
   bool imageSelected = false;
 
   Future getImage(ImageSource source) async {
@@ -164,8 +162,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             imageSelected = false;
                           });
                         },
-                        icon: Icon(Icons.camera),
-                        label: Text('Camera'),
+                        icon: Icon(Icons.camera_alt_outlined),
+                        label: Text('Change Picture'),
                       ),
                       RaisedButton.icon(
                         onPressed: () {
@@ -179,8 +177,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             }),
                           );
                         },
-                        icon: Icon(Icons.save_alt),
-                        label: Text('Save'),
+                        icon: Icon(Icons.arrow_forward),
+                        label: Text('Continue'),
                       )
                     ],
                   )
