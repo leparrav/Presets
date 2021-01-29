@@ -16,24 +16,29 @@ class BeforeAfterStack extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _BeforeAfterStackState createState() => _BeforeAfterStackState(imageHeight);
+  _BeforeAfterStackState createState() => _BeforeAfterStackState();
 }
 
 class _BeforeAfterStackState extends State<BeforeAfterStack> {
-  final double imageHeight;
+  _BeforeAfterStackState();
+  ColorFiltered imageFiltered;
 
-  _BeforeAfterStackState(this.imageHeight);
+  ColorFiltered setImageFilter() {
+    imageFiltered = ColorFiltered(
+      colorFilter: ColorFilter.matrix(widget.colorMatrix),
+      child: Image.file(widget.imageSelected),
+    );
+
+    return imageFiltered;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       BeforeAfter(
         beforeImage: Image.file(widget.imageSelected),
-        afterImage: ColorFiltered(
-          colorFilter: ColorFilter.matrix(widget.colorMatrix),
-          child: Image.file(widget.imageSelected),
-        ),
-        imageHeight: imageHeight,
+        afterImage: setImageFilter(),
+        imageHeight: widget.imageHeight,
       ),
       Positioned(
         child: Material(

@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/preset_info.dart';
 import 'package:preset_app/components/primary_button.dart';
+import 'package:preset_app/screens/confirm_screen.dart';
 
 import '../constants.dart';
 
@@ -45,16 +46,17 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
         imageSelected = true;
+        buildPresetFiltersPortraits();
       } else {
         print('No image selected.');
       }
     });
   }
 
-  void buildPresetFiltersPortraits(kCategories selected) async {
+  void buildPresetFiltersPortraits() async {
     List<Widget> listOfPortraits = [];
 
-    var data = await loadJson(selected);
+    var data = await loadJson(widget.categorySelected);
     var dataList = data as List;
 
     List<PresetInfo> presetInfoList =
@@ -66,8 +68,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
             height: 100,
-            image: AssetImage(
-                'assets/images/${selected.toShortString()}/${item.sampleImage}'),
+            image: FileImage(_image),
           ),
         ),
       );
@@ -103,7 +104,6 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   void initState() {
     super.initState();
     appliedFilter = widget.colorMatrix;
-    buildPresetFiltersPortraits(widget.categorySelected);
   }
 
   @override
@@ -141,7 +141,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
             : Column(
                 children: [
                   BeforeAfterStack(
-                      imageHeight: 500,
+                      imageHeight: 450,
                       colorMatrix: appliedFilter,
                       imageSelected: _image),
                   SizedBox(height: 20.0),
@@ -152,6 +152,38 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                       children: portraitImages,
                     ),
                   ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      RaisedButton.icon(
+                        onPressed: () {
+                          setState(() {
+                            imageSelected = false;
+                          });
+                        },
+                        icon: Icon(Icons.camera),
+                        label: Text('Camera'),
+                      ),
+                      RaisedButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return ConfirmScreen(
+                                image: _image,
+                                colorFilterMatrix: appliedFilter,
+                              );
+                            }),
+                          );
+                        },
+                        icon: Icon(Icons.save_alt),
+                        label: Text('Save'),
+                      )
+                    ],
+                  )
                 ],
               ),
       ),
