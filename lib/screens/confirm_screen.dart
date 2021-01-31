@@ -34,26 +34,27 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 child: Image.file(widget.image),
               ),
             ),
-            RaisedButton.icon(
-              onPressed: () {
-                Share.share('check out my website https://example.com');
-              },
-              icon: Icon(Icons.share),
-              label: Text('Share'),
+            SizedBox(
+              height: 30.0,
             ),
             RaisedButton.icon(
-              onPressed: () async {
-                screenshotController.capture().then((File image) {
-                  //Capture Done
-                  setState(() {
-                    _imageFile = image;
-                  });
+              padding: EdgeInsets.all(10.0),
+              onPressed: () {
+                screenshotController
+                    .capture(
+                  pixelRatio: 1.5,
+                  delay: Duration(milliseconds: 10),
+                )
+                    .then((File image) {
+                  List<String> paths = [];
+                  paths.add(image.path);
+                  Share.shareFiles(paths);
                 }).catchError((onError) {
                   print(onError);
                 });
               },
-              icon: Icon(Icons.save),
-              label: Text('Save'),
+              icon: Icon(Icons.share),
+              label: Text('Share'),
             ),
           ],
         ),
