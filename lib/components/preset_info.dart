@@ -2,12 +2,10 @@ import 'dart:convert';
 
 class PresetInfo {
   String title;
-  String sampleImage;
   String description;
   List<double> colorMatrix;
 
-  PresetInfo(
-      {this.title, this.sampleImage, this.description, this.colorMatrix});
+  PresetInfo({this.title, this.description, this.colorMatrix});
 
   factory PresetInfo.fromJson(Map<String, dynamic> jsonMap) {
     String colorString = jsonMap["colorMatrix"] as String;
@@ -21,7 +19,6 @@ class PresetInfo {
     return PresetInfo(
         title: jsonMap["title"],
         description: jsonMap["description"],
-        sampleImage: jsonMap["sampleImage"],
         colorMatrix: colorMatrix);
   }
 }
