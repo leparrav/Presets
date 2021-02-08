@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:preset_app/app.localization.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
 import 'package:preset_app/screens/use_preset_screen.dart';
@@ -21,6 +22,9 @@ List<Widget> setCategoriesImages(context) {
   List<Widget> categories = [];
 
   for (var value in kCategories.values) {
+    String localizedTitle = AppLocalizations.of(context)
+        .translate(value.toShortString().toUpperCase());
+
     categories.add(
       ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
@@ -40,13 +44,12 @@ List<Widget> setCategoriesImages(context) {
             Image.asset(
                 'assets/images/categories/${value.toShortString()}.jpg'),
             Positioned(
-                bottom: 20,
-                child: value == kCategories.WINTER
-                    ? Text(value.toShortString().toUpperCase(),
-                        style: kCategoryCardTextStyle.copyWith(
-                            color: Colors.black))
-                    : Text(value.toShortString().toUpperCase(),
-                        style: kCategoryCardTextStyle)),
+              bottom: 20,
+              child: Text(localizedTitle,
+                  style: value == kCategories.WINTER
+                      ? kCategoryCardTextStyle.copyWith(color: Colors.black)
+                      : kCategoryCardTextStyle),
+            ),
           ]),
         ),
       ),
