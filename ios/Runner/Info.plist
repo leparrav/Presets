@@ -42,12 +42,12 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>Allow access to photo library</string>
-
-    <key>NSCameraUsageDescription</key>
-    <string>Allow access to camera to capture photos</string>
-
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Allow access to microphone</string>
+	<string>Allow access to photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access to camera to capture photos</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6315239830176663~6806325543</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow access to microphone</string>
 </dict>
 </plist>

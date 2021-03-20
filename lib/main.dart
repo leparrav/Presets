@@ -6,6 +6,7 @@ import 'package:preset_app/screens/preset_category_screen.dart';
 import 'app.localization.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(PresetApp());
 }
 
