@@ -3,13 +3,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:preset_app/screens/main_screen.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
+import 'package:provider/provider.dart';
 
+import 'ad_state.dart';
 import 'app.localization.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final initFuture = MobileAds.instance.initialize();
-  runApp(PresetApp());
+  final adState = AdState(initFuture);
+  runApp(
+    Provider.value(value: adState, builder: (context, child) => PresetApp()),
+  );
 }
 
 class PresetApp extends StatelessWidget {

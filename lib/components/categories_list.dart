@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:preset_app/app.localization.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
 import 'package:preset_app/screens/use_preset_screen.dart';
+import 'package:provider/provider.dart';
+
+import '../ad_state.dart';
 
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
@@ -62,7 +66,30 @@ List<Widget> setCategoriesImages(context) {
   return categories;
 }
 
-class CategoriesList extends StatelessWidget {
+class CategoriesList extends StatefulWidget {
+  @override
+  _CategoriesListState createState() => _CategoriesListState();
+}
+
+class _CategoriesListState extends State<CategoriesList> {
+  BannerAd banner;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final adState = Provider.of<AdState>(context);
+    adState.initialization.then((status) {
+      setState(() {
+        banner = BannerAd(
+            size: AdSize.banner,
+            adUnitId: adState.get(),
+            listener: adState.adListener,
+            request: AdRequest())
+          ..load();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,9 +98,22 @@ class CategoriesList extends StatelessWidget {
       color: Colors.blueAccent,
       child: Material(
         color: kPrimaryColor1,
-        child: ListView(
-          children: setCategoriesImages(context),
-          scrollDirection: Axis.horizontal,
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView(
+                children: setCategoriesImages(context),
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+            if (banner == null)
+              SizedBox(height: 50.0)
+            else
+              Container(
+                height: 50,
+                child: AdWidget(ad: banner),
+              ),
+          ],
         ),
       ),
     );

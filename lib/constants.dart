@@ -14,7 +14,7 @@ const kPresetCardTextStyle = TextStyle(
 
 const kCategoryCardTextStyle = TextStyle(
   color: kPrimaryColor1,
-  fontSize: 36,
+  fontSize: 14,
   fontFamily: 'Lora',
   fontWeight: FontWeight.bold,
 );
