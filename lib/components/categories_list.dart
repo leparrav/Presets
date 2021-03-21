@@ -45,8 +45,10 @@ List<Widget> setCategoriesImages(context) {
             );
           },
           child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
-            Image.asset(
-                'assets/images/categories/${value.toShortString()}.jpg'),
+            Image(
+                height: 500,
+                image: AssetImage(
+                    'assets/images/categories/${value.toShortString()}.jpg')),
             Positioned(
               bottom: 20,
               child: Text(localizedTitle,
@@ -81,7 +83,7 @@ class _CategoriesListState extends State<CategoriesList> {
     adState.initialization.then((status) {
       setState(() {
         banner = BannerAd(
-            size: AdSize.banner,
+            size: AdSize.fullBanner,
             adUnitId: adState.get(),
             listener: adState.adListener,
             request: AdRequest())
@@ -94,25 +96,35 @@ class _CategoriesListState extends State<CategoriesList> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(kContainerPadding),
-      height: kContainerHeight,
       color: Colors.blueAccent,
       child: Material(
         color: kPrimaryColor1,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Expanded(
+            Container(
+              height: 300,
+              margin: EdgeInsets.only(bottom: 10),
               child: ListView(
                 children: setCategoriesImages(context),
                 scrollDirection: Axis.horizontal,
               ),
             ),
-            if (banner == null)
-              SizedBox(height: 50.0)
-            else
-              Container(
-                height: 50,
-                child: AdWidget(ad: banner),
+            Container(
+              height: 300,
+              child: ListView(
+                children: setCategoriesImages(context),
+                scrollDirection: Axis.horizontal,
               ),
+            ),
+            SizedBox(height: 10),
+            banner == null
+                ? SizedBox(height: 100.0)
+                : Container(
+                    height: 100,
+                    width: 320,
+                    child: AdWidget(ad: banner),
+                  ),
           ],
         ),
       ),
