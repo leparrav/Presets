@@ -4,6 +4,9 @@
   "KIDS": "KIDS",
   "WINTER": "WINTER",
   "TRAVEL": "TRAVEL",
-  "LOW_LIGHT": "LOW LIGHT"
-
+  "LOW_LIGHT": "LOW LIGHT",
+  "FOOD": "FOOD",
+  "HAPPY": "HAPPY",
+  "HALLOWEEN": "HALLOWEEN",
+  "SPRING": "SPRING"
 }

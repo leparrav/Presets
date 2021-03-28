@@ -14,7 +14,7 @@ const kPresetCardTextStyle = TextStyle(
 
 const kCategoryCardTextStyle = TextStyle(
   color: kPrimaryColor1,
-  fontSize: 36,
+  fontSize: 28,
   fontFamily: 'Lora',
   fontWeight: FontWeight.bold,
 );
@@ -27,7 +27,7 @@ AppBar topBar() {
 
 enum kCategories { PORTRAIT, KIDS, TRAVEL, NATURE, WINTER }
 
-enum kCategoriesRow2 { LOW_LIGHT, KIDS, TRAVEL, NATURE, WINTER }
+enum kCategoriesRow2 { LOW_LIGHT, FOOD, HAPPY, HALLOWEEN, SPRING }
 
 extension ParseToString on kCategories {
   String toShortString() {
