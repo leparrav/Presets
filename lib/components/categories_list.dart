@@ -22,9 +22,7 @@ void navigateToCategory(context, kCategories categorySelected) {
   );
 }
 
-List<Widget> setCategoriesImages(context) {
-  List<Widget> categories = [];
-
+void buildCategoriesRow1(context, List<Widget> categories) {
   for (var value in kCategories.values) {
     String localizedTitle = AppLocalizations.of(context)
         .translate(value.toShortString().toUpperCase());
@@ -64,7 +62,55 @@ List<Widget> setCategoriesImages(context) {
       SizedBox(height: kContainerHeight, width: 10.0),
     );
   }
+}
 
+void buildCategoriesRow2(context, List<Widget> categories) {
+  for (var value in kCategories.values) {
+    String localizedTitle = AppLocalizations.of(context)
+        .translate(value.toShortString().toUpperCase());
+
+    categories.add(
+      ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UsePresetScreen(
+                  colorMatrix: kIdentityColorMatrix,
+                  categorySelected: value,
+                ),
+              ),
+            );
+          },
+          child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
+            Image(
+                height: 500,
+                image: AssetImage(
+                    'assets/images/categories/${value.toShortString()}.jpg')),
+            Positioned(
+              bottom: 20,
+              child: Text(localizedTitle,
+                  style: value == kCategories.WINTER
+                      ? kCategoryCardTextStyle.copyWith(color: Colors.black)
+                      : kCategoryCardTextStyle),
+            ),
+          ]),
+        ),
+      ),
+    );
+    categories.add(
+      SizedBox(height: kContainerHeight, width: 10.0),
+    );
+  }
+}
+
+List<Widget> setCategoriesImages(context, int categoryRow) {
+  List<Widget> categories = [];
+  if (categoryRow == 1) {
+    buildCategoriesRow1(context, categories);
+  }
   return categories;
 }
 
@@ -106,14 +152,14 @@ class _CategoriesListState extends State<CategoriesList> {
               height: 300,
               margin: EdgeInsets.only(bottom: 10),
               child: ListView(
-                children: setCategoriesImages(context),
+                children: setCategoriesImages(context, 1),
                 scrollDirection: Axis.horizontal,
               ),
             ),
             Container(
               height: 300,
               child: ListView(
-                children: setCategoriesImages(context),
+                children: setCategoriesImages(context, 2),
                 scrollDirection: Axis.horizontal,
               ),
             ),
