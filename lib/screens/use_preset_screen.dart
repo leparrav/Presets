@@ -15,7 +15,7 @@ import '../constants.dart';
 class UsePresetScreen extends StatefulWidget {
   static String id = 'UsePresetScreen';
   final List<double> colorMatrix;
-  final kCategories categorySelected;
+  final String categorySelected;
 
   const UsePresetScreen(
       {Key key, @required this.colorMatrix, this.categorySelected})
@@ -25,10 +25,10 @@ class UsePresetScreen extends StatefulWidget {
   _UsePresetScreenState createState() => _UsePresetScreenState();
 }
 
-dynamic loadJson(kCategories categorySelected) async {
+dynamic loadJson(String categorySelected) async {
   String data = '';
-  data = await rootBundle.loadString(
-      'assets/data/cards_info_${categorySelected.toShortString()}.json');
+  data = await rootBundle
+      .loadString('assets/data/cards_info_${categorySelected}.json');
   var jsonResult = json.decode(data);
   return jsonResult;
 }

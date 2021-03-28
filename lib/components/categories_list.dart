@@ -37,7 +37,7 @@ void buildCategoriesRow1(context, List<Widget> categories) {
               MaterialPageRoute(
                 builder: (context) => UsePresetScreen(
                   colorMatrix: kIdentityColorMatrix,
-                  categorySelected: value,
+                  categorySelected: value.toShortString(),
                 ),
               ),
             );
@@ -65,7 +65,7 @@ void buildCategoriesRow1(context, List<Widget> categories) {
 }
 
 void buildCategoriesRow2(context, List<Widget> categories) {
-  for (var value in kCategories.values) {
+  for (var value in kCategoriesRow2.values) {
     String localizedTitle = AppLocalizations.of(context)
         .translate(value.toShortString().toUpperCase());
 
@@ -79,7 +79,7 @@ void buildCategoriesRow2(context, List<Widget> categories) {
               MaterialPageRoute(
                 builder: (context) => UsePresetScreen(
                   colorMatrix: kIdentityColorMatrix,
-                  categorySelected: value,
+                  categorySelected: value.toShortString(),
                 ),
               ),
             );
@@ -110,7 +110,10 @@ List<Widget> setCategoriesImages(context, int categoryRow) {
   List<Widget> categories = [];
   if (categoryRow == 1) {
     buildCategoriesRow1(context, categories);
+  } else if (categoryRow == 2) {
+    buildCategoriesRow2(context, categories);
   }
+
   return categories;
 }
 

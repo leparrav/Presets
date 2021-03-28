@@ -27,7 +27,15 @@ AppBar topBar() {
 
 enum kCategories { PORTRAIT, KIDS, TRAVEL, NATURE, WINTER }
 
+enum kCategoriesRow2 { LOW_LIGHT, KIDS, TRAVEL, NATURE, WINTER }
+
 extension ParseToString on kCategories {
+  String toShortString() {
+    return this.toString().split('.').last.toLowerCase();
+  }
+}
+
+extension PString on kCategoriesRow2 {
   String toShortString() {
     return this.toString().split('.').last.toLowerCase();
   }
