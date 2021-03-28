@@ -2,11 +2,14 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/preset_info.dart';
 import 'package:preset_app/screens/confirm_screen.dart';
+import 'package:provider/provider.dart';
 
+import '../ad_state.dart';
 import '../constants.dart';
 
 class UsePresetScreen extends StatefulWidget {
@@ -36,6 +39,30 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   final picker = ImagePicker();
   File _image;
   bool imageSelected = false;
+  BannerAd banner;
+  InterstitialAd saveInterstitial;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final adState = Provider.of<AdState>(context);
+    adState.initialization.then((status) {
+      setState(() {
+        banner = BannerAd(
+            size: AdSize.banner,
+            adUnitId: adState.get(),
+            listener: adState.adListener,
+            request: AdRequest())
+          ..load();
+
+        saveInterstitial = InterstitialAd(
+          adUnitId: adState.getInterstitial(),
+          request: AdRequest(),
+          listener: AdListener(),
+        )..load();
+      });
+    });
+  }
 
   Future getImage(ImageSource source) async {
     final pickedFile = await picker.getImage(source: source);
@@ -84,7 +111,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                   appliedFilter = item.colorMatrix;
                 });
               },
-              child: portrait)
+              child: portrait),
         ],
       );
 
@@ -137,6 +164,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 )
               ])
             : Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   BeforeAfterStack(
                       imageHeight: 450,
@@ -167,6 +195,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                       ),
                       RaisedButton.icon(
                         onPressed: () {
+                          saveInterstitial.show();
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) {
@@ -181,7 +210,14 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                         label: Text('Continue'),
                       )
                     ],
-                  )
+                  ),
+                  banner == null
+                      ? SizedBox(height: 100.0)
+                      : Container(
+                          height: 100,
+                          width: 320,
+                          child: AdWidget(ad: banner),
+                        ),
                 ],
               ),
       ),

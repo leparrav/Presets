@@ -12,6 +12,12 @@ class AdState {
         : 'ca-app-pub-3940256099942544/2934735716';
   }
 
+  String getInterstitial() {
+    return Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/1033173712'
+        : 'ca-app-pub-3940256099942544/4411468910';
+  }
+
   AdListener get adListener => _adListener;
 
   AdListener _adListener = AdListener(
