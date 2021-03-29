@@ -15,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor1,
-      appBar: topBar(),
+      appBar: topBar(context),
       body: Material(
         color: kPrimaryColor1,
         child: ListView(

@@ -8,5 +8,9 @@
   "FOOD": "FOOD",
   "HAPPY": "HAPPY",
   "HALLOWEEN": "HALLOWEEN",
-  "SPRING": "SPRING"
+  "SPRING": "SPRING",
+  "CAMERA": "Camera",
+  "GALLERY": "Gallery",
+  "CONTINUE": "Continue",
+  "CHANGE_PICTURE": "Change picture"
 }

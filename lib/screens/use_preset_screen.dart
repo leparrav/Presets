@@ -10,6 +10,7 @@ import 'package:preset_app/screens/confirm_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../ad_state.dart';
+import '../app.localization.dart';
 import '../constants.dart';
 
 class UsePresetScreen extends StatefulWidget {
@@ -101,17 +102,13 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
       Column column = Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            item.title,
-            style: kPresetCardTextStyle.copyWith(fontSize: 10.0),
-          ),
-          FlatButton(
-              onPressed: () {
+          GestureDetector(
+              onTap: () {
                 setState(() {
                   appliedFilter = item.colorMatrix;
                 });
               },
-              child: portrait),
+              child: Container(padding: EdgeInsets.all(10.0), child: portrait)),
         ],
       );
 
@@ -145,7 +142,9 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text('Camera'),
+                      Text(
+                        AppLocalizations.of(context).translate('CAMERA'),
+                      ),
                       Icon(Icons.camera_alt_outlined),
                     ],
                   ),
@@ -157,7 +156,9 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text('Gallery'),
+                      Text(
+                        AppLocalizations.of(context).translate('GALLERY'),
+                      ),
                       Icon(Icons.add_photo_alternate_outlined),
                     ],
                   ),
@@ -191,7 +192,10 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                           });
                         },
                         icon: Icon(Icons.camera_alt_outlined),
-                        label: Text('Change Picture'),
+                        label: Text(
+                          AppLocalizations.of(context)
+                              .translate('CHANGE_PICTURE'),
+                        ),
                       ),
                       RaisedButton.icon(
                         onPressed: () {
@@ -207,7 +211,9 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                           );
                         },
                         icon: Icon(Icons.arrow_forward),
-                        label: Text('Continue'),
+                        label: Text(
+                          AppLocalizations.of(context).translate('CONTINUE'),
+                        ),
                       )
                     ],
                   ),

@@ -8,5 +8,9 @@
   "FOOD": "COMIDA",
   "HAPPY": "FELIZ",
   "HALLOWEEN": "HALLOWEEN",
-  "SPRING": "PRIMAVERA"
+  "SPRING": "PRIMAVERA",
+  "CAMERA": "Cámara",
+  "GALLERY": "Galería",
+  "CONTINUE": "Continuar",
+  "CHANGE_PICTURE": "Elegir otra foto"
 }

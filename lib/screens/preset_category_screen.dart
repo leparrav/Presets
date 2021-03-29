@@ -71,7 +71,7 @@ class _PresetCategoryScreenState extends State<PresetCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topBar(),
+      appBar: topBar(context),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

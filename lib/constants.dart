@@ -19,9 +19,18 @@ const kCategoryCardTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-AppBar topBar() {
+AppBar topBar(context) {
   return AppBar(
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.black87,
+    title: Text('Presetfy'),
+    actions: <Widget>[
+      IconButton(
+        icon: const Icon(Icons.help),
+        onPressed: () {
+          showAboutDialog(context: context);
+        },
+      ),
+    ],
   );
 }
 
