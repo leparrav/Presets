@@ -68,7 +68,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   Future getImage(ImageSource source) async {
     final pickedFile = await picker.getImage(source: source);
 
-    setState(() {
+    setState(() async {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
         imageSelected = true;
@@ -93,7 +93,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
         child: ColorFiltered(
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
-            height: 100,
+            height: 80,
             image: FileImage(_image),
           ),
         ),
@@ -102,6 +102,10 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
       Column column = Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          Text(
+            item.title,
+            style: kPresetCardTextStyle.copyWith(fontSize: 10.0),
+          ),
           GestureDetector(
               onTap: () {
                 setState(() {
