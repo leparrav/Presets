@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const kPrimaryColor1 = Color(0xFFf1f1f1);
 const kPrimaryColor2 = Color(0xFFfdb827);
@@ -22,7 +23,10 @@ const kCategoryCardTextStyle = TextStyle(
 AppBar topBar(context) {
   return AppBar(
     backgroundColor: Colors.black87,
-    title: Text('Presetfy'),
+    title: Text(
+      'Light up',
+      style: GoogleFonts.indieFlower().copyWith(fontSize: 32.0),
+    ),
     actions: <Widget>[
       IconButton(
         icon: const Icon(Icons.help),

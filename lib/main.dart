@@ -22,7 +22,7 @@ class PresetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Preset App',
+      title: 'Light up',
       supportedLocales: [
         Locale('en', ''),
         Locale('es', ''),
