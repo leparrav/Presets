@@ -22,7 +22,7 @@ const kCategoryCardTextStyle = TextStyle(
 
 AppBar topBar(context) {
   return AppBar(
-    backgroundColor: Colors.black87,
+    backgroundColor: Colors.black,
     title: Text(
       'Light up',
       style: GoogleFonts.indieFlower().copyWith(fontSize: 32.0),
