@@ -1,32 +1,32 @@
 [
   {
-    "title": "Fashion artist",
+    "title": "Light Salmon",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.393, 0.769, 0.189, 0, 0, 0.349, 0.686, 0.168, 0, 0, 0.272, 0.534, 0.131, 0, 0,  0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.8274509803921569,0,0,0,0,0,0.67843137254901963,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Peach Puff",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.8549019607843137,0,0,0,0,0,0.7254901960784313,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Ivory",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.39, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0.71, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,1,0,0,0,0,0,0.9411764705882353,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Papaya Whip",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.9372549019607843,0,0,0,0,0,0.8352941176470589,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Forest Green",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.9647058823529412,0,0,0,0,0,1.09333333333333333,0,0,0,0,0,0.9647058823529412,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Light Sea Green",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.72549019607843137,0,0,0,0,0,1.06980392156862745,0,0,0,0,0,0.9666666666666666,0,0,0,0,0,1,0"
   }
 ]

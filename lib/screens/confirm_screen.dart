@@ -53,6 +53,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   print(onError);
                 });
               },
+              color: Colors.white,
               icon: Icon(Icons.share),
               label: Text('Share'),
             ),

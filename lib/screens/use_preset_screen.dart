@@ -195,6 +195,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             imageSelected = false;
                           });
                         },
+                        color: Colors.white,
                         icon: Icon(Icons.camera_alt_outlined),
                         label: Text(
                           AppLocalizations.of(context)
@@ -214,6 +215,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             }),
                           );
                         },
+                        color: Colors.white,
                         icon: Icon(Icons.arrow_forward),
                         label: Text(
                           AppLocalizations.of(context).translate('CONTINUE'),
