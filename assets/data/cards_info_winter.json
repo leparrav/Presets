@@ -1,32 +1,32 @@
 [
   {
-    "title": "Fashion artist",
+    "title": "Strong White",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.393, 0.769, 0.189, 0, 0, 0.349, 0.686, 0.168, 0, 0, 0.272, 0.534, 0.131, 0, 0,  0, 0, 0, 1, 0"
+    "colorMatrix": "1.2, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1.2, 0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Snow",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.9803921568627451,0,0,0,0,0,0.9803921568627451,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Floral White",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.39, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0.71, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.9803921568627451,0,0,0,0,0,0.9411764705882353,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Ivory",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,1,0,0,0,0,0,0.9411764705882353,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Misty Rose",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1,0,0,0,0,0,0.8941176470588236,0,0,0,0,0,0.8823529411764706,0,0,0,0,0,1,0"
   },
   {
-    "title": "Fashion artist2",
+    "title": "Ghost White",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1, 0, 0, 0, -0.2, 0.2, 0.1, 0.4, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.9725490196078431,0,0,0,0,0,0.9725490196078431,0,0,0,0,0,1,0,0,0,0,0,1,0"
   }
 ]
