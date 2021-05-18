@@ -4,6 +4,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:preset_app/screens/main_screen.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 import 'ad_state.dart';
 import 'app.localization.dart';
@@ -21,6 +22,10 @@ class PresetApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
       title: 'Light up',
       supportedLocales: [
