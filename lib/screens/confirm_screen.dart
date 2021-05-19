@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share/share.dart';
 
@@ -39,19 +41,19 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
             ),
             RaisedButton.icon(
               padding: EdgeInsets.all(10.0),
-              onPressed: () {
-                screenshotController
-                    .capture(
-                  pixelRatio: 1.5,
-                  delay: Duration(milliseconds: 10),
-                )
-                    .then((File image) {
-                  List<String> paths = [];
-                  paths.add(image.path);
-                  Share.shareFiles(paths);
-                }).catchError((onError) {
-                  print(onError);
-                });
+              onPressed: () async {
+                final directory = (await getApplicationDocumentsDirectory())
+                    .path; //from path_provide package
+                String fileName = 'Lighted-up';
+                String path = '$directory';
+
+                String result = await screenshotController.captureAndSave(
+                    path, //set path where screenshot will be saved
+                    fileName: fileName);
+
+                List<String> paths;
+                paths.add(path + fileName);
+                Share.shareFiles(paths);
               },
               color: Colors.white,
               icon: Icon(Icons.share),
