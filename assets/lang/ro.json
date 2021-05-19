@@ -1,7 +1,16 @@
 {
-  "PORTRAIT": "RETRATO",
-  "NATURE": "NATURALEZA",
-  "KIDS": "NIÑOS",
-  "WINTER": "INVIERNO",
-  "TRAVEL": "VIAJES"
+  "PORTRAIT": "PORTRET",
+  "NATURE": "NATURĂ",
+  "KIDS": "COPII",
+  "WINTER": "IARNĂ",
+  "TRAVEL": "CĂLĂTORIE",
+  "LOW_LIGHT": "LUMINĂ SCĂZUTĂ",
+  "FOOD": "MÂNCARE",
+  "HAPPY": "FERICIT",
+  "HALLOWEEN": "HALLOWEEN",
+  "SPRING": "PRIMĂVARĂ",
+  "CAMERA": "Cameră foto",
+  "GALLERY": "Galerie",
+  "CONTINUE": "Continuă",
+  "CHANGE_PICTURE": "Schimbă poza"
 }
