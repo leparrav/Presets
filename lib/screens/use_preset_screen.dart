@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
@@ -135,7 +136,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: kPrimaryColor4,
       body: SafeArea(
         child: !imageSelected
             ? SimpleDialog(children: <Widget>[
@@ -195,11 +196,15 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             imageSelected = false;
                           });
                         },
-                        color: Colors.white,
+                        color: kPrimaryColor1,
                         icon: Icon(Icons.camera_alt_outlined),
                         label: Text(
                           AppLocalizations.of(context)
                               .translate('CHANGE_PICTURE'),
+                          style: GoogleFonts.indieFlower().copyWith(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       RaisedButton.icon(
@@ -215,10 +220,14 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             }),
                           );
                         },
-                        color: Colors.white,
+                        color: kPrimaryColor1,
                         icon: Icon(Icons.arrow_forward),
                         label: Text(
                           AppLocalizations.of(context).translate('CONTINUE'),
+                          style: GoogleFonts.indieFlower().copyWith(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       )
                     ],
