@@ -42,17 +42,17 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
             RaisedButton.icon(
               padding: EdgeInsets.all(10.0),
               onPressed: () async {
-                final directory = (await getApplicationDocumentsDirectory())
-                    .path; //from path_provide package
-                String fileName = 'Lighted-up.jpg';
-                String path = '$directory';
+                Uint8List image = await screenshotController.capture(
+                  pixelRatio: 1.5,
+                );
 
-                String result = await screenshotController.captureAndSave(
-                    path, //set path where screenshot will be saved
-                    fileName: fileName);
+                final tempDir = await getTemporaryDirectory();
+                final file =
+                    await new File('${tempDir.path}/image.jpg').create();
+                file.writeAsBytesSync(image);
 
-                List<String> paths;
-                paths.add('$path/$fileName');
+                List<String> paths = [];
+                paths.add('${tempDir.path}/Lighted-up.jpg');
                 Share.shareFiles(paths, text: 'Lighted up!');
               },
               color: Colors.white,
