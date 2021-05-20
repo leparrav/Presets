@@ -61,12 +61,13 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
 
                     final tempDir = await getTemporaryDirectory();
                     final file =
-                        await new File('${tempDir.path}/image.jpg').create();
+                        await new File('${tempDir.path}/Lighted-up.jpg')
+                            .create();
                     file.writeAsBytesSync(image);
 
                     List<String> paths = [];
                     paths.add('${tempDir.path}/Lighted-up.jpg');
-                    Share.shareFiles(paths, text: 'Lighted up!');
+                    Share.shareFiles(paths);
                   },
                   icon: Icon(Icons.share),
                   label: Text('Share')),
