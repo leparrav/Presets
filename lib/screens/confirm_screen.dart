@@ -44,7 +44,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               onPressed: () async {
                 final directory = (await getApplicationDocumentsDirectory())
                     .path; //from path_provide package
-                String fileName = 'Lighted-up';
+                String fileName = 'Lighted-up.jpg';
                 String path = '$directory';
 
                 String result = await screenshotController.captureAndSave(
@@ -52,8 +52,8 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                     fileName: fileName);
 
                 List<String> paths;
-                paths.add(path + fileName);
-                Share.shareFiles(paths);
+                paths.add('$path/$fileName');
+                Share.shareFiles(paths, text: 'Lighted up!');
               },
               color: Colors.white,
               icon: Icon(Icons.share),

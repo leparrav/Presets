@@ -1,4 +1,4 @@
-package luiseparrav.preset_app;
+package com.ldapps.light_up.app;
 
 import io.flutter.embedding.android.FlutterActivity;
 
