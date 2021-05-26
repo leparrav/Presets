@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share/share.dart';
 
+import '../app.localization.dart';
 import '../constants.dart';
 
 class ConfirmScreen extends StatefulWidget {
@@ -70,7 +71,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                     Share.shareFiles(paths);
                   },
                   icon: Icon(Icons.share),
-                  label: Text('Share')),
+                  label: Text(AppLocalizations.of(context).translate('SHARE'))),
             ),
           ],
         ),
