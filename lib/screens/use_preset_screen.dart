@@ -136,7 +136,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor4,
+      backgroundColor: Colors.black87,
       body: SafeArea(
         child: !imageSelected
             ? SimpleDialog(children: <Widget>[
@@ -220,7 +220,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                             }),
                           );
                         },
-                        color: kPrimaryColor1,
+                        color: kPrimaryColor2,
                         icon: Icon(Icons.arrow_forward),
                         label: Text(
                           AppLocalizations.of(context).translate('CONTINUE'),

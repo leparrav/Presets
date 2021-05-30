@@ -29,49 +29,52 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kPrimaryColor4,
+      backgroundColor: Colors.black87,
       body: SafeArea(
         child: Column(
           children: [
-            Screenshot(
-              controller: screenshotController,
-              child: ColorFiltered(
-                colorFilter: ColorFilter.matrix(widget.colorFilterMatrix),
-                child: Image.file(widget.image),
+            Expanded(
+              child: Screenshot(
+                controller: screenshotController,
+                child: ColorFiltered(
+                  colorFilter: ColorFilter.matrix(widget.colorFilterMatrix),
+                  child: Image.file(widget.image),
+                ),
               ),
             ),
-            SizedBox(
-              height: 30.0,
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: TextButton.icon(
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.only(left: 24, right: 24),
-                    primary: Colors.black,
-                    backgroundColor: kPrimaryColor1,
-                    textStyle: GoogleFonts.indieFlower().copyWith(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+            Container(
+              padding: EdgeInsets.only(bottom: 10.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: TextButton.icon(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.only(left: 24, right: 24),
+                      primary: Colors.black,
+                      backgroundColor: kPrimaryColor2,
+                      textStyle: GoogleFonts.indieFlower().copyWith(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  onPressed: () async {
-                    Uint8List image = await screenshotController.capture(
-                      pixelRatio: 1.5,
-                    );
+                    onPressed: () async {
+                      Uint8List image = await screenshotController.capture(
+                        pixelRatio: 1.5,
+                      );
 
-                    final tempDir = await getTemporaryDirectory();
-                    final file =
-                        await new File('${tempDir.path}/Lighted-up.jpg')
-                            .create();
-                    file.writeAsBytesSync(image);
+                      final tempDir = await getTemporaryDirectory();
+                      final file =
+                          await new File('${tempDir.path}/Lighted-up.jpg')
+                              .create();
+                      file.writeAsBytesSync(image);
 
-                    List<String> paths = [];
-                    paths.add('${tempDir.path}/Lighted-up.jpg');
-                    Share.shareFiles(paths);
-                  },
-                  icon: Icon(Icons.share),
-                  label: Text(AppLocalizations.of(context).translate('SHARE'))),
+                      List<String> paths = [];
+                      paths.add('${tempDir.path}/Lighted-up.jpg');
+                      Share.shareFiles(paths);
+                    },
+                    icon: Icon(Icons.share),
+                    label:
+                        Text(AppLocalizations.of(context).translate('SHARE'))),
+              ),
             ),
           ],
         ),
