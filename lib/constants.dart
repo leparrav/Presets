@@ -14,11 +14,11 @@ const kPresetCardTextStyle = TextStyle(
 );
 
 const kCategoryCardTextStyle = TextStyle(
-  color: kPrimaryColor1,
-  fontSize: 14,
-  fontFamily: 'Lora',
-  fontWeight: FontWeight.bold,
-);
+    color: kPrimaryColor1,
+    fontSize: 15,
+    fontFamily: 'Lora',
+    fontWeight: FontWeight.bold,
+    backgroundColor: Color(0x4D000000));
 
 AppBar topBar(context) {
   return AppBar(

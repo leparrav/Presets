@@ -65,7 +65,8 @@ class CategoryCard extends StatelessWidget {
           bottom: 20,
           child: Text(localizedTitle,
               style: value == kCategories.WINTER
-                  ? kCategoryCardTextStyle.copyWith(color: Colors.black)
+                  ? kCategoryCardTextStyle.copyWith(
+                      color: Colors.black, backgroundColor: Color(0x4DFFFFFF))
                   : kCategoryCardTextStyle),
         ),
       ]),
@@ -102,6 +103,7 @@ class _CategoriesListState extends State<CategoriesList> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
+        childAspectRatio: 0.8,
       ),
       itemCount: kCategories.values.length,
       itemBuilder: (context, index) {
