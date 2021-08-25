@@ -22,99 +22,55 @@ void navigateToCategory(context, kCategories categorySelected) {
   );
 }
 
-void buildCategoriesRow1(context, List<Widget> categories) {
-  for (var value in kCategories.values) {
-    String localizedTitle = AppLocalizations.of(context)
-        .translate(value.toShortString().toUpperCase());
+Widget buildCategoriesRow(context, index) {
+  var values = kCategories.values;
+  var category = values[index];
 
-    categories.add(
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => UsePresetScreen(
-                  colorMatrix: kIdentityColorMatrix,
-                  categorySelected: value.toShortString(),
-                ),
-              ),
-            );
-          },
-          child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
-            Image(
-                height: 500,
-                image: AssetImage(
-                    'assets/images/categories/${value.toShortString()}.jpg')),
-            Positioned(
-              bottom: 20,
-              child: Text(localizedTitle,
-                  style: value == kCategories.WINTER
-                      ? kCategoryCardTextStyle.copyWith(color: Colors.black)
-                      : kCategoryCardTextStyle),
-            ),
-          ]),
-        ),
-      ),
-    );
-    categories.add(
-      SizedBox(height: kContainerHeight, width: 10.0),
-    );
-  }
+  String localizedTitle = AppLocalizations.of(context)
+      .translate(category.toShortString().toUpperCase());
+
+  return CategoryCard(value: category, localizedTitle: localizedTitle);
 }
 
-void buildCategoriesRow2(context, List<Widget> categories) {
-  for (var value in kCategoriesRow2.values) {
-    String localizedTitle = AppLocalizations.of(context)
-        .translate(value.toShortString().toUpperCase());
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    Key key,
+    @required this.value,
+    @required this.localizedTitle,
+  }) : super(key: key);
 
-    categories.add(
-      ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => UsePresetScreen(
-                  colorMatrix: kIdentityColorMatrix,
-                  categorySelected: value.toShortString(),
-                ),
-              ),
-            );
-          },
-          child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
-            Image(
-                height: 500,
-                image: AssetImage(
-                    'assets/images/categories/${value.toShortString()}.jpg')),
-            Positioned(
-              bottom: 20,
-              child: Text(localizedTitle,
-                  style: value == kCategories.WINTER
-                      ? kCategoryCardTextStyle.copyWith(color: Colors.black)
-                      : kCategoryCardTextStyle),
+  final kCategories value;
+  final String localizedTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => UsePresetScreen(
+              colorMatrix: kIdentityColorMatrix,
+              categorySelected: value.toShortString(),
             ),
-          ]),
+          ),
+        );
+      },
+      child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
+        Image(
+            width: 100,
+            image: AssetImage(
+                'assets/images/categories/${value.toShortString()}.jpg')),
+        Positioned(
+          bottom: 20,
+          child: Text(localizedTitle,
+              style: value == kCategories.WINTER
+                  ? kCategoryCardTextStyle.copyWith(color: Colors.black)
+                  : kCategoryCardTextStyle),
         ),
-      ),
-    );
-    categories.add(
-      SizedBox(height: kContainerHeight, width: 10.0),
+      ]),
     );
   }
-}
-
-List<Widget> setCategoriesImages(context, int categoryRow) {
-  List<Widget> categories = [];
-  if (categoryRow == 1) {
-    buildCategoriesRow1(context, categories);
-  } else if (categoryRow == 2) {
-    buildCategoriesRow2(context, categories);
-  }
-
-  return categories;
 }
 
 class CategoriesList extends StatefulWidget {
@@ -143,40 +99,14 @@ class _CategoriesListState extends State<CategoriesList> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(kContainerPadding),
-      color: Colors.blueAccent,
-      child: Material(
-        color: kPrimaryColor1,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              height: 300,
-              margin: EdgeInsets.only(bottom: 10),
-              child: ListView(
-                children: setCategoriesImages(context, 1),
-                scrollDirection: Axis.horizontal,
-              ),
-            ),
-            Container(
-              height: 300,
-              child: ListView(
-                children: setCategoriesImages(context, 2),
-                scrollDirection: Axis.horizontal,
-              ),
-            ),
-            SizedBox(height: 10),
-            banner == null
-                ? SizedBox(height: 100.0)
-                : Container(
-                    height: 100,
-                    width: 320,
-                    child: AdWidget(ad: banner),
-                  ),
-          ],
-        ),
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
       ),
+      itemCount: kCategories.values.length,
+      itemBuilder: (context, index) {
+        return buildCategoriesRow(context, index);
+      },
     );
   }
 }

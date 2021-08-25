@@ -17,11 +17,7 @@ class _MainScreenState extends State<MainScreen> {
       appBar: topBar(context),
       body: Material(
         color: kPrimaryColor1,
-        child: ListView(
-          children: [
-            CategoriesList(),
-          ],
-        ),
+        child: CategoriesList(),
       ),
     );
   }
