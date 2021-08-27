@@ -18,7 +18,7 @@ const kCategoryCardTextStyle = TextStyle(
     fontSize: 15,
     fontFamily: 'Lora',
     fontWeight: FontWeight.bold,
-    backgroundColor: Color(0x4D000000));
+    backgroundColor: Color(0x1A000000));
 
 AppBar topBar(context) {
   return AppBar(
