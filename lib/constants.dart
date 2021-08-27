@@ -15,7 +15,7 @@ const kPresetCardTextStyle = TextStyle(
 
 const kCategoryCardTextStyle = TextStyle(
     color: kPrimaryColor1,
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: 'Lora',
     fontWeight: FontWeight.bold,
     backgroundColor: Color(0x1A000000));
@@ -42,7 +42,6 @@ enum kCategories {
   PORTRAIT,
   KIDS,
   TRAVEL,
-  NATURE,
   LOW_LIGHT,
   FOOD,
   HAPPY,
@@ -51,6 +50,9 @@ enum kCategories {
   SUMMER,
   FALL,
   WINTER,
+  NATURE,
+  DESERT,
+  FOREST
 }
 
 extension ParseToString on kCategories {

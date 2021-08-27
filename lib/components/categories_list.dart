@@ -59,10 +59,21 @@ class CategoryCard extends StatelessWidget {
         );
       },
       child: Stack(alignment: AlignmentDirectional.bottomCenter, children: [
-        Image(
-            width: 100,
-            image: AssetImage(
-                'assets/images/categories/${value.toShortString()}.jpg')),
+        Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black54,
+                blurRadius: 6.0,
+                spreadRadius: 2.0,
+              ),
+            ],
+          ),
+          child: Image(
+              width: 100,
+              image: AssetImage(
+                  'assets/images/categories/${value.toShortString()}.jpg')),
+        ),
         Positioned(
           bottom: 20,
           child: Text(localizedTitle,
