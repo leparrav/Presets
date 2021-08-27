@@ -43,12 +43,14 @@ enum kCategories {
   KIDS,
   TRAVEL,
   NATURE,
-  WINTER,
   LOW_LIGHT,
   FOOD,
   HAPPY,
   HALLOWEEN,
-  SPRING
+  SPRING,
+  SUMMER,
+  FALL,
+  WINTER,
 }
 
 extension ParseToString on kCategories {

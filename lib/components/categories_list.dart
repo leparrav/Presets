@@ -44,6 +44,8 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<kCategories> blackLetters = [kCategories.WINTER, kCategories.SUMMER];
+
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -64,7 +66,7 @@ class CategoryCard extends StatelessWidget {
         Positioned(
           bottom: 20,
           child: Text(localizedTitle,
-              style: value == kCategories.WINTER
+              style: blackLetters.contains(value)
                   ? kCategoryCardTextStyle.copyWith(
                       color: Colors.black, backgroundColor: Color(0x4DFFFFFF))
                   : kCategoryCardTextStyle),
