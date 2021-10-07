@@ -48,7 +48,8 @@ class CategoryCard extends StatelessWidget {
       kCategories.WINTER,
       kCategories.SUMMER,
       kCategories.INTERIOR,
-      kCategories.TEA
+      kCategories.TEA,
+      kCategories.BABIES
     ];
 
     return GestureDetector(
