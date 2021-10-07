@@ -41,18 +41,30 @@ AppBar topBar(context) {
 enum kCategories {
   PORTRAIT,
   KIDS,
+  DOGS,
   TRAVEL,
+  CITIES,
+  SUNSET,
+  SUNRISE,
   LOW_LIGHT,
+  STREET_PHOTOGRAPHY,
+  NIGHT_MODE,
   FOOD,
+  TEA,
   HAPPY,
   HALLOWEEN,
+  LAKE,
   SPRING,
   SUMMER,
   FALL,
   WINTER,
   NATURE,
   DESERT,
-  FOREST
+  FOREST,
+  FOREST_MOUNTAIN,
+  SNOW,
+  INTERIOR,
+  UNDERWATER
 }
 
 extension ParseToString on kCategories {

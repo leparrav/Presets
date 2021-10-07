@@ -30,7 +30,11 @@ class AppLocalizations {
   }
 
   String translate(String key) {
-    return _localizedStrings[key];
+    if (_localizedStrings.containsKey(key)) {
+      return _localizedStrings[key];
+    }
+
+    return "PLACEHOLDER";
   }
 }
 
