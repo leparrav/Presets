@@ -16,6 +16,17 @@
   "CONTINUE": "Continue",
   "CHANGE_PICTURE": "Change picture",
   "SHARE": "Share",
-  "DESERT": "Desert",
-  "FOREST": "Forest"
+  "DESERT": "DESERT",
+  "FOREST": "FOREST",
+  "CITIES": "CITIES",
+  "DOGS": "DOGS",
+  "FOREST_MOUNTAIN": "MOUNTAIN",
+  "INTERIOR": "INTERIOR",
+  "LAKE": "LAKE",
+  "NIGHT_MODE": "NIGHT MODE",
+  "STREET_PHOTOGRAPHY": "GRIM MODE",
+  "SUNRISE": "SUNRISE",
+  "SUNSET": "SUNSET",
+  "TEA": "TEA",
+  "UNDERWATER": "UNDERWATER"
 }

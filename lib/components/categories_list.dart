@@ -44,7 +44,12 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<kCategories> blackLetters = [kCategories.WINTER, kCategories.SUMMER];
+    List<kCategories> blackLetters = [
+      kCategories.WINTER,
+      kCategories.SUMMER,
+      kCategories.INTERIOR,
+      kCategories.TEA
+    ];
 
     return GestureDetector(
       onTap: () {
