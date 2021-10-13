@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Light Salmon",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1,0,0,0,0,0,0.8274509803921569,0,0,0,0,0,0.67843137254901963,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Peach Puff",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1,0,0,0,0,0,0.8549019607843137,0,0,0,0,0,0.7254901960784313,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Ivory",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1,0,0,0,0,0,1,0,0,0,0,0,0.9411764705882353,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Papaya Whip",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1,0,0,0,0,0,0.9372549019607843,0,0,0,0,0,0.8352941176470589,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Forest Green",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.9647058823529412,0,0,0,0,0,1.09333333333333333,0,0,0,0,0,0.9647058823529412,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Light Sea Green",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.72549019607843137,0,0,0,0,0,1.06980392156862745,0,0,0,0,0,0.9666666666666666,0,0,0,0,0,1,0"
+  }
+]

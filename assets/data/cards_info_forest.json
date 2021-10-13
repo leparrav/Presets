@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Cornsilk",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1,0,0,0,0,0,0.9725490196078431,0,0,0,0,0,0.8627450980392157,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Wheat",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.9607843137254902,0,0,0,0,0,0.8705882352941177,0,0,0,0,0,0.7019607843137254,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Coral",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.2,0,0,0,0,0,0.998,0,0,0,0,0,0.813,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Maulma",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "Plum",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.1,0,0,0,0,0.2,0.8,0.3,0,0,0,0,1.2,0,0,0,0,0,1,0"
+  },
+  {
+      "title": "Entendre",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.98, 0, 0, 0, 0, 0, 1, 0.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+  }
+]
