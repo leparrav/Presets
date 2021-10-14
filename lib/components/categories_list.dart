@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:preset_app/app.localization.dart';
 import 'package:preset_app/constants.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
 import 'package:preset_app/screens/use_preset_screen.dart';
-import 'package:provider/provider.dart';
-
-import '../ad_state.dart';
 
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
@@ -99,24 +95,6 @@ class CategoriesList extends StatefulWidget {
 }
 
 class _CategoriesListState extends State<CategoriesList> {
-  BannerAd banner;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final adState = Provider.of<AdState>(context);
-    adState.initialization.then((status) {
-      setState(() {
-        banner = BannerAd(
-            size: AdSize.fullBanner,
-            adUnitId: adState.get(),
-            listener: adState.adListener,
-            request: AdRequest())
-          ..load();
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
