@@ -149,7 +149,9 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
               children: [
                 RaisedButton.icon(
                   onPressed: () {
-                    setState(() {});
+                    setState(() {
+                      Navigator.pop(context);
+                    });
                   },
                   color: kPrimaryColor1,
                   icon: Icon(Icons.camera_alt_outlined),
