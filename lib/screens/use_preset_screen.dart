@@ -118,6 +118,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
   void initState() {
     super.initState();
     appliedFilter = widget.colorMatrix;
+    buildPresetFiltersPortraits();
   }
 
   @override

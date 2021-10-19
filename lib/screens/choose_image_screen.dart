@@ -6,7 +6,8 @@ import '../app.localization.dart';
 import '../constants.dart';
 
 class ImageChooserScreen extends StatefulWidget {
-  const ImageChooserScreen({Key key, this.categorySelected}) : super(key: key);
+  const ImageChooserScreen({Key key, @required this.categorySelected})
+      : super(key: key);
   final String categorySelected;
 
   @override

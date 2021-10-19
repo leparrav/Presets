@@ -53,7 +53,9 @@ class CategoryCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ImageChooserScreen(),
+            builder: (context) => ImageChooserScreen(
+              categorySelected: value.toShortString(),
+            ),
           ),
         );
       },
