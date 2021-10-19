@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:preset_app/components/before_after_stack.dart';
 import 'package:preset_app/components/preset_info.dart';
 import 'package:preset_app/screens/confirm_screen.dart';
@@ -16,11 +15,15 @@ import '../constants.dart';
 
 class UsePresetScreen extends StatefulWidget {
   static String id = 'UsePresetScreen';
+  final File image;
   final List<double> colorMatrix;
   final String categorySelected;
 
   const UsePresetScreen(
-      {Key key, @required this.colorMatrix, this.categorySelected})
+      {Key key,
+      @required this.image,
+      @required this.colorMatrix,
+      this.categorySelected})
       : super(key: key);
 
   @override
@@ -38,9 +41,7 @@ dynamic loadJson(String categorySelected) async {
 class _UsePresetScreenState extends State<UsePresetScreen> {
   List<Widget> portraitImages = [];
   List<double> appliedFilter = [];
-  final picker = ImagePicker();
-  File _image;
-  bool imageSelected = false;
+
   BannerAd banner;
   InterstitialAd saveInterstitial;
 
@@ -66,20 +67,6 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     });
   }
 
-  Future getImage(ImageSource source) async {
-    final pickedFile = await picker.getImage(source: source);
-
-    setState(() async {
-      if (pickedFile != null) {
-        _image = File(pickedFile.path);
-        imageSelected = true;
-        buildPresetFiltersPortraits();
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
   void buildPresetFiltersPortraits() async {
     List<Widget> listOfPortraits = [];
 
@@ -95,7 +82,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           colorFilter: ColorFilter.matrix(item.colorMatrix),
           child: Image(
             height: 80,
-            image: FileImage(_image),
+            image: FileImage(widget.image),
           ),
         ),
       );
@@ -138,109 +125,75 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     return Scaffold(
       backgroundColor: Colors.black87,
       body: SafeArea(
-        child: !imageSelected
-            ? SimpleDialog(children: <Widget>[
-                SimpleDialogOption(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            BeforeAfterStack(
+                imageHeight: 450,
+                colorMatrix: appliedFilter,
+                imageSelected: widget.image),
+            SizedBox(height: 20.0),
+            Container(
+              height: 120.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: portraitImages,
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                RaisedButton.icon(
                   onPressed: () {
-                    getImage(ImageSource.camera);
+                    setState(() {});
                   },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        AppLocalizations.of(context).translate('CAMERA'),
-                      ),
-                      Icon(Icons.camera_alt_outlined),
-                    ],
-                  ),
-                ),
-                SimpleDialogOption(
-                  onPressed: () {
-                    getImage(ImageSource.gallery);
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        AppLocalizations.of(context).translate('GALLERY'),
-                      ),
-                      Icon(Icons.add_photo_alternate_outlined),
-                    ],
-                  ),
-                )
-              ])
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  BeforeAfterStack(
-                      imageHeight: 450,
-                      colorMatrix: appliedFilter,
-                      imageSelected: _image),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 120.0,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: portraitImages,
+                  color: kPrimaryColor1,
+                  icon: Icon(Icons.camera_alt_outlined),
+                  label: Text(
+                    AppLocalizations.of(context).translate('CHANGE_PICTURE'),
+                    style: GoogleFonts.indieFlower().copyWith(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
-                    height: 30.0,
+                ),
+                RaisedButton.icon(
+                  onPressed: () {
+                    saveInterstitial.show();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return ConfirmScreen(
+                          image: widget.image,
+                          colorFilterMatrix: appliedFilter,
+                        );
+                      }),
+                    );
+                  },
+                  color: kPrimaryColor2,
+                  icon: Icon(Icons.arrow_forward),
+                  label: Text(
+                    AppLocalizations.of(context).translate('CONTINUE'),
+                    style: GoogleFonts.indieFlower().copyWith(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      RaisedButton.icon(
-                        onPressed: () {
-                          setState(() {
-                            imageSelected = false;
-                          });
-                        },
-                        color: kPrimaryColor1,
-                        icon: Icon(Icons.camera_alt_outlined),
-                        label: Text(
-                          AppLocalizations.of(context)
-                              .translate('CHANGE_PICTURE'),
-                          style: GoogleFonts.indieFlower().copyWith(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      RaisedButton.icon(
-                        onPressed: () {
-                          saveInterstitial.show();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) {
-                              return ConfirmScreen(
-                                image: _image,
-                                colorFilterMatrix: appliedFilter,
-                              );
-                            }),
-                          );
-                        },
-                        color: kPrimaryColor2,
-                        icon: Icon(Icons.arrow_forward),
-                        label: Text(
-                          AppLocalizations.of(context).translate('CONTINUE'),
-                          style: GoogleFonts.indieFlower().copyWith(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )
-                    ],
+                )
+              ],
+            ),
+            banner == null
+                ? SizedBox(height: 100.0)
+                : Container(
+                    height: 100,
+                    width: 320,
+                    child: AdWidget(ad: banner),
                   ),
-                  banner == null
-                      ? SizedBox(height: 100.0)
-                      : Container(
-                          height: 100,
-                          width: 320,
-                          child: AdWidget(ad: banner),
-                        ),
-                ],
-              ),
+          ],
+        ),
       ),
     );
   }

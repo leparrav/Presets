@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:preset_app/app.localization.dart';
 import 'package:preset_app/constants.dart';
+import 'package:preset_app/screens/choose_image_screen.dart';
 import 'package:preset_app/screens/preset_category_screen.dart';
-import 'package:preset_app/screens/use_preset_screen.dart';
 
 const kContainerPadding = 20.0;
 const kContainerHeight = 500.0;
@@ -53,10 +53,7 @@ class CategoryCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => UsePresetScreen(
-              colorMatrix: kIdentityColorMatrix,
-              categorySelected: value.toShortString(),
-            ),
+            builder: (context) => ImageChooserScreen(),
           ),
         );
       },
