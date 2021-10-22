@@ -41,7 +41,7 @@ dynamic loadJson(String categorySelected) async {
 class _UsePresetScreenState extends State<UsePresetScreen> {
   List<Widget> portraitImages = [];
   List<double> appliedFilter = [];
-
+  final scrollController = ScrollController();
   BannerAd banner;
   InterstitialAd saveInterstitial;
 
@@ -76,7 +76,9 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     List<PresetInfo> presetInfoList =
         dataList.map<PresetInfo>((json) => PresetInfo.fromJson(json)).toList();
 
+    int i = 1;
     for (PresetInfo item in presetInfoList) {
+      int portraitIndex = i;
       ClipRRect portrait = ClipRRect(
         child: ColorFiltered(
           colorFilter: ColorFilter.matrix(item.colorMatrix),
@@ -96,6 +98,11 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           ),
           GestureDetector(
               onTap: () {
+                scrollController.animateTo(
+                  80.0 * portraitIndex,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.ease,
+                );
                 setState(() {
                   appliedFilter = item.colorMatrix;
                 });
@@ -107,6 +114,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
       listOfPortraits.add(
         column,
       );
+
+      i++;
     }
 
     setState(() {
@@ -137,6 +146,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
             Container(
               height: 120.0,
               child: ListView(
+                controller: scrollController,
                 scrollDirection: Axis.horizontal,
                 children: portraitImages,
               ),
