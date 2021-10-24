@@ -78,11 +78,13 @@ class CategoryCard extends StatelessWidget {
         ),
         Positioned(
           bottom: 20,
-          child: Text(localizedTitle,
-              style: blackLetters.contains(value)
-                  ? kCategoryCardTextStyle.copyWith(
-                      color: Colors.black, backgroundColor: Color(0x4DFFFFFF))
-                  : kCategoryCardTextStyle),
+          child: Text(
+            localizedTitle.split(' ').join('\n'),
+            style: blackLetters.contains(value)
+                ? kCategoryCardTextStyle.copyWith(
+                    color: Colors.black, backgroundColor: Color(0x4DFFFFFF))
+                : kCategoryCardTextStyle,
+          ),
         ),
       ]),
     );

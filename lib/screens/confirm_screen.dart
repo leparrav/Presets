@@ -21,8 +21,6 @@ class ConfirmScreen extends StatefulWidget {
 }
 
 class _ConfirmScreenState extends State<ConfirmScreen> {
-  File _imageFile;
-
   //Create an instance of ScreenshotController
   ScreenshotController screenshotController = ScreenshotController();
 
@@ -63,12 +61,12 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
 
                       final tempDir = await getTemporaryDirectory();
                       final file =
-                          await new File('${tempDir.path}/Lighted-up.jpg')
+                          await new File('${tempDir.path}/Light-up.jpg')
                               .create();
                       file.writeAsBytesSync(image);
 
                       List<String> paths = [];
-                      paths.add('${tempDir.path}/Lighted-up.jpg');
+                      paths.add('${tempDir.path}/Light-up.jpg');
                       Share.shareFiles(paths);
                     },
                     icon: Icon(Icons.share),
