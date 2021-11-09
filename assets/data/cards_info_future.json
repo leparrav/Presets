@@ -1,32 +1,53 @@
 [
   {
-    "title": "Cornsilk",
+    "title": "Light up",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,0.9725490196078431,0,0,0,0,0,0.8627450980392157,0,0,0,0,0,1,0"
+    "colorMatrix": "1.4, 0.3, 0.3, 0, 0, 0, 1.4, 0, 0, 0, 0, 0, 1.4, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Wheat",
+    "title": "Blue stack",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.9607843137254902,0,0,0,0,0,0.8705882352941177,0,0,0,0,0,0.7019607843137254,0,0,0,0,0,1,0"
+    "colorMatrix": "-0.5, 0, 0, 0, 0, 0.1, 1, 0, 0, 0, 0.8, 0, 0, 0.2, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Coral",
+    "title": "Grayscale",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1.2,0,0,0,0,0,0.998,0,0,0,0,0,0.813,0,0,0,0,0,1,0"
+    "colorMatrix": "0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Maulma",
+    "title": "Wine",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "1.4, 0, 0, 0, 0, 0.6, 1.4, 0, 0, 0, 0, 0.6, 1.4, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Plum",
+    "title": "Saturate",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1.1,0,0,0,0,0.2,0.8,0.3,0,0,0,0,1.2,0,0,0,0,0,1,0"
+    "colorMatrix": "1.7, 0, 0, 0, 0, 0, 1.7, 0, 0, 0, 0, 0, 1.7, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-      "title": "Entendre",
+    "title": "Reverse",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.98, 0, 0, 0, 0, 0, 1, 0.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "-1, 1.5, 0, 0, 0, 1.5, 0.2, 0, 0, 0, 0, 0, 0, 0.2, -1, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "B&W",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.66, 0.66, 0.66, 0, 0, 0.66, 0.66, 0.66, 0, 0, 0.66, 0.66, 0.66, 0, 0, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "Blade Runner",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.5, 0, 0, 0, 0, 0.1, 1, 0, 0, 0, 0.8, 0, 0, 0.2, 0, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "Dune",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.90, 0.66, 0.66, 0, 0, 0.66, 0.32, 0.66, 0, 0, 0.66, 0.66, 0.66, 0, 0, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "Recall",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.76, 0.66, 0.66, 0, 0, 0.96, 0.66, 0.66, 0, 0, 0.66, 1.66, 0.66, 0, 0, 0, 0, 0, 1, 0"
   }
+
 ]

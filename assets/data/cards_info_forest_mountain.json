@@ -1,32 +1,52 @@
 [
   {
-    "title": "Cornsilk",
+    "title": "Jade",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,0.9725490196078431,0,0,0,0,0,0.8627450980392157,0,0,0,0,0,1,0"
+    "colorMatrix": "0.84901960784313725,0,0,0,0,0,0.9627450980392157,0,0,0,0,0,0.7235294117647059,0,0,0,0,0,1,0"
   },
   {
-    "title": "Wheat",
+    "title": "Hunter Green",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.9607843137254902,0,0,0,0,0,0.8705882352941177,0,0,0,0,0,0.7019607843137254,0,0,0,0,0,1,0"
+    "colorMatrix": "0.74901960784313725,0,0,0,0,0,1.5627450980392157,0,0,0,0,0,0.7235294117647059,0,0,0,0,0,1,0"
   },
   {
-    "title": "Coral",
+    "title": "Emerald",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1.2,0,0,0,0,0,0.998,0,0,0,0,0,0.813,0,0,0,0,0,1,0"
+    "colorMatrix": "1.1196078431372549,0,0,0,0,0,1.45882352941176473,0,0,0,0,0,0.96666666666666666,0,0,0,0,0,1,0"
   },
   {
-    "title": "Maulma",
+    "title": "Myrtle Green",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.9764705882352941,0,0,0,0,0,1.8745098039215686,0,0,0,0,0,0.8745098039215686,0,0,0,0,0,1,0"
   },
   {
-    "title": "Plum",
+    "title": "Baby Green",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1.1,0,0,0,0,0.2,0.8,0.3,0,0,0,0,1.2,0,0,0,0,0,1,0"
+    "colorMatrix": "0.9372549019607843,0,0,0,0,0,0.9117647058823529,0,0,0,0,0,0.3911764705882353,0,0,0,0,0,1,0"
   },
   {
-      "title": "Entendre",
+    "title": "Mindaro",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.98, 0, 0, 0, 0, 0, 1, 0.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 0, 1, 0"
+    "colorMatrix": "0.9882352941176471,0,0,0,0,0,0.9921568627450981,0,0,0,0,0,0.7705882352941177,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Laurel",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0,9,0,0,0,0,1.1941176470588236,0,0,0,0,0,0.8823529411764706,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Tiger",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.2,0,0,0,0,0,0.9137254901960784,0,0,0,0,0,0.8215686274509804,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Honey",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.3254901960784314,0,0,0,0,0,0.992156862745098,0,0,0,0,0,0.723529411764705882,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Lime",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.1333333333333333,0,0,0,0,0,1.3098039215686274,0,0,0,0,0,0.5843137254901961,0,0,0,0,0,1,0"
   }
 ]
