@@ -28,5 +28,25 @@
     "title": "Ghost White",
     "description": "Light up your pictures as a fashion artist designer",
     "colorMatrix": "0.9725490196078431,0,0,0,0,0,0.9725490196078431,0,0,0,0,0,1,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Atomic Tangerine",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.9098039215686274,0,0,0,0,0,1.0568627450980392,0,0,0,0,0,1.14901960784313725,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Tiger",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.2,0,0,0,0,0,0.9137254901960784,0,0,0,0,0,0.8215686274509804,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Honey",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.3254901960784314,0,0,0,0,0,0.992156862745098,0,0,0,0,0,0.723529411764705882,0,0,0,0,0,1,0"
+  },
+  {
+    "title": "Orange Crayola",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "1.3254901960784314,0,0,0,0,0.3,0.892156862745098,0,0,0,0,0,0.623529411764705882,0,0,0,0,0,1,0"
   }
 ]

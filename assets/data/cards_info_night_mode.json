@@ -1,32 +1,37 @@
 [
   {
-    "title": "Light Salmon",
+    "title": "Light up",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,0.8274509803921569,0,0,0,0,0,0.67843137254901963,0,0,0,0,0,1,0"
+    "colorMatrix": "1.4, 0, 0, 0, 0, 0, 1.4, 0, 0, 0, 0, 0, 1.4, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Peach Puff",
+    "title": "Blue stack",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,0.8549019607843137,0,0,0,0,0,0.7254901960784313,0,0,0,0,0,1,0"
+    "colorMatrix": "-0.1, 0, 0, 0, 0, 0.1, 1, 0, 0, 0, 0.8, 0, 0, 0.2, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Ivory",
+    "title": "Grayscale",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,1,0,0,0,0,0,0.9411764705882353,0,0,0,0,0,1,0"
+    "colorMatrix": "0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0.33, 0.33, 0.33, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Papaya Whip",
+    "title": "Wine",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "1,0,0,0,0,0,0.9372549019607843,0,0,0,0,0,0.8352941176470589,0,0,0,0,0,1,0"
+    "colorMatrix": "1.4, 0, 0, 0, 0, 0.6, 1.4, 0, 0, 0, 0, 0.6, 1.4, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Forest Green",
+    "title": "Saturate",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.9647058823529412,0,0,0,0,0,1.09333333333333333,0,0,0,0,0,0.9647058823529412,0,0,0,0,0,1,0"
+    "colorMatrix": "1.7, 0, 0, 0, 0, 0, 1.7, 0, 0, 0, 0, 0, 1.7, 0, 0, 0, 0, 0, 1, 0"
   },
   {
-    "title": "Light Sea Green",
+    "title": "Reverse",
     "description": "Light up your pictures as a fashion artist designer",
-    "colorMatrix": "0.72549019607843137,0,0,0,0,0,1.06980392156862745,0,0,0,0,0,0.9666666666666666,0,0,0,0,0,1,0"
+    "colorMatrix": "0.2, 1.5, 0, 0, 0, 1.5, 0.2, 0, 0, 0, 0, 0, 0, 0.2, 1.5, 0, 0, 0, 1, 0"
+  },
+  {
+    "title": "B&W",
+    "description": "Light up your pictures as a fashion artist designer",
+    "colorMatrix": "0.66, 0.66, 0.66, 0, 0, 0.66, 0.66, 0.66, 0, 0, 0.66, 0.66, 0.66, 0, 0, 0, 0, 0, 1, 0"
   }
 ]
