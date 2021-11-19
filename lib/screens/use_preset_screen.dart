@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -175,7 +176,10 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 ),
                 RaisedButton.icon(
                   onPressed: () {
-                    saveInterstitial.show();
+                    var rng = new Random();
+                    if (rng.nextDouble() > 0.9) {
+                      saveInterstitial.show();
+                    }
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) {
