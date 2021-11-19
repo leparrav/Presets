@@ -100,7 +100,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
           GestureDetector(
               onTap: () {
                 scrollController.animateTo(
-                  80.0 * portraitIndex,
+                  60.0 * portraitIndex,
                   duration: Duration(milliseconds: 500),
                   curve: Curves.ease,
                 );
