@@ -77,6 +77,23 @@ extension ParseToString on kCategories {
   }
 }
 
+const List<BottomNavigationBarItem> kBottomBarItems = [
+  BottomNavigationBarItem(
+    icon: Icon(
+      Icons.post_add,
+      size: 40.0,
+    ),
+    label: '',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(
+      Icons.photo_filter,
+      size: 40.0,
+    ),
+    label: '',
+  ),
+];
+
 const List<double> kIdentityColorMatrix = [
   1,
   0,

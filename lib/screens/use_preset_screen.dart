@@ -42,6 +42,8 @@ dynamic loadJson(String categorySelected) async {
 class _UsePresetScreenState extends State<UsePresetScreen> {
   List<Widget> portraitImages = [];
   List<double> appliedFilter = [];
+  int _selectedIndex = 0;
+
   final scrollController = ScrollController();
   BannerAd banner;
   InterstitialAd saveInterstitial;
@@ -124,6 +126,12 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     });
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -202,15 +210,15 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 )
               ],
             ),
-            banner == null
-                ? SizedBox(height: 100.0)
-                : Container(
-                    height: 100,
-                    width: 320,
-                    child: AdWidget(ad: banner),
-                  ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: kBottomBarItems,
+        currentIndex: _selectedIndex,
+        backgroundColor: kPrimaryColor2,
+        selectedItemColor: kPrimaryColor3,
+        onTap: _onItemTapped,
       ),
     );
   }
