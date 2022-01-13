@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mdi/mdi.dart';
 
 const kPrimaryColor1 = Color(0xFFf1f1f1);
 const kPrimaryColor2 = Color(0xFFfdb827);
@@ -80,7 +81,7 @@ extension ParseToString on kCategories {
 const List<BottomNavigationBarItem> kBottomBarItems = [
   BottomNavigationBarItem(
     icon: Icon(
-      Icons.post_add,
+      Mdi.alphabeticalVariant,
       size: 40.0,
     ),
     label: '',

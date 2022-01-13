@@ -152,14 +152,21 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 colorMatrix: appliedFilter,
                 imageSelected: widget.image),
             SizedBox(height: 20.0),
-            Container(
-              height: 120.0,
-              child: ListView(
-                controller: scrollController,
-                scrollDirection: Axis.horizontal,
-                children: portraitImages,
-              ),
-            ),
+            _selectedIndex == 0
+                ? Row(
+                    children: [],
+                  )
+                : Container(),
+            _selectedIndex == 1
+                ? Container(
+                    height: 120.0,
+                    child: ListView(
+                      controller: scrollController,
+                      scrollDirection: Axis.horizontal,
+                      children: portraitImages,
+                    ),
+                  )
+                : Container(),
             SizedBox(
               height: 30.0,
             ),
