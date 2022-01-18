@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:preset_app/components/before_after_stack.dart';
+import 'package:preset_app/components/draggable_text_menu.dart';
 import 'package:preset_app/components/preset_info.dart';
 import 'package:preset_app/screens/confirm_screen.dart';
 import 'package:provider/provider.dart';
@@ -54,13 +55,6 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
     final adState = Provider.of<AdState>(context);
     adState.initialization.then((status) {
       setState(() {
-        banner = BannerAd(
-            size: AdSize.banner,
-            adUnitId: adState.get(),
-            listener: adState.adListener,
-            request: AdRequest())
-          ..load();
-
         saveInterstitial = InterstitialAd(
           adUnitId: adState.getInterstitial(),
           request: AdRequest(),
@@ -151,12 +145,8 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 imageHeight: 450,
                 colorMatrix: appliedFilter,
                 imageSelected: widget.image),
-            SizedBox(height: 20.0),
-            _selectedIndex == 0
-                ? Row(
-                    children: [],
-                  )
-                : Container(),
+            SizedBox(height: 10.0),
+            _selectedIndex == 0 ? MenuDraggableText() : Container(),
             _selectedIndex == 1
                 ? Container(
                     height: 120.0,
@@ -192,7 +182,7 @@ class _UsePresetScreenState extends State<UsePresetScreen> {
                 RaisedButton.icon(
                   onPressed: () {
                     var rng = new Random();
-                    if (rng.nextDouble() > 0.9) {
+                    if (rng.nextDouble() > 0.75) {
                       saveInterstitial.show();
                     }
                     Navigator.push(
